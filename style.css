@@ -160,3 +160,8 @@ nav a {
 #additional-services ul li {
   margin-bottom: 15px;
 }
+
+#additional-services {
+  text-align: left;
+  padding-left: 40px;  /* You can adjust 40px to your liking */
+}
