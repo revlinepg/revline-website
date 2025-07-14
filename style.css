@@ -94,3 +94,29 @@ nav a {
   margin: 0 40px;
   text-decoration: none;
 }
+
+#featured-services .services-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 300px; 
+}
+
+#featured-services .services-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #333;
+}
+
+#featured-services .services-images img:first-child {
+  margin-left: -300px; 
+}
+
+#featured-services .services-images img:last-child {
+  margin-top: 100px;
+}
+
+#featured-services .services-images img:last-child {
+  margin-left: -300px; 
+}
