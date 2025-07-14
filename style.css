@@ -147,8 +147,16 @@ nav a {
   }
 }
 
+#additional-services {
+  text-align: left;
+}
+
+#additional-services ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 #additional-services ul li {
   margin-bottom: 15px;
-  font-size: 1.1em;
-  letter-spacing: 0.5px;
 }
