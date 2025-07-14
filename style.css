@@ -136,10 +136,10 @@ nav a {
     margin-top: 20px;
   }
 
-  #featured-services .services-images img {
-    width: 45%;
-    margin-left: 0; /* reset any left margins you applied */
-  }
+ #featured-services .services-images img {
+  width: 100%;
+  margin-left: 0;
+}
 
   #featured-services .services-images img:first-child,
   #featured-services .services-images img:last-child {
