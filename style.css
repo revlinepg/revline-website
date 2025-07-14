@@ -120,3 +120,29 @@ nav a {
 #featured-services .services-images img:last-child {
   margin-left: -300px; 
 }
+
+@media (max-width: 768px) {
+  #featured-services {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  #featured-services .services-images {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  #featured-services .services-images img {
+    width: 45%;
+    margin-left: 0; /* reset any left margins you applied */
+  }
+
+  #featured-services .services-images img:first-child,
+  #featured-services .services-images img:last-child {
+    margin-left: 0;
+  }
+}
