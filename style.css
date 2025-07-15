@@ -181,3 +181,26 @@ nav a {
   margin-bottom: 8px;
   width: fit-content;
 }
+
+.badge-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.badge-list li {
+  background-color: white;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: default;
+  transition: transform 0.2s;
+}
+
+.badge-list li:hover {
+  transform: scale(1.05);
+}
