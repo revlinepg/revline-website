@@ -165,3 +165,19 @@ nav a {
   text-align: left;
   padding-left: 40px;  /* You can adjust 40px to your liking */
 }
+
+#featured-services ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+#featured-services ul li {
+  background-color: #cc0000;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 1em;
+  margin-bottom: 8px;
+  width: fit-content;
+}
