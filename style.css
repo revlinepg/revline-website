@@ -204,3 +204,47 @@ nav a {
 .badge-list li:hover {
   transform: scale(1.05);
 }
+
+/* Make navigation mobile-friendly */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px 10px;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+}
+
+/* Responsive behavior on smaller screens */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    width: 90%;
+    text-align: center;
+  }
+}
