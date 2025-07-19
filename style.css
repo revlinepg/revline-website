@@ -13,10 +13,17 @@ header {
 }
 
 .logo {
-  width: 100%;
-  max-width: 220px;
+  max-width: 180px;
+  height: auto;
   margin: 10px auto;
   display: block;
+}
+
+/* Responsive tweak for mobile screens */
+@media (max-width: 480px) {
+  .logo {
+    max-width: 120px;
+  }
 }
 
 h1 {
