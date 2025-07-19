@@ -2,33 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revline Performance Garage</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Revline Performance Garage</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Revline Performance Garage Logo" class="logo"/>
+    <img src="logo.png" alt="Revline Logo" />
   </header>
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">Gallery & Reviews</a></li>
-    <li><a href="mobile.html">Mobile Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-<main>
-  <section id="about">
-    <h2>Gallery</h2>
-    <!-- SnapWidget -->
-<iframe src="https://snapwidget.com/embed/1102785" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:765px" title="Posts from Instagram"></iframe>
-    <h2>Reviews</h2>
-  </section>
-</main>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Gallery & Reviews</a></li>
+      <li><a href="mobile.html">Mobile Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>Gallery</h2>
+      <!-- SnapWidget Instagram Feed -->
+      <iframe 
+        src="https://snapwidget.com/embed/1102785" 
+        class="snapwidget-widget" 
+        allowtransparency="true" 
+        frameborder="0" 
+        scrolling="no" 
+        style="border:none; overflow:hidden; width:100%; height:500px;">
+      </iframe>
+
+      <h2>Reviews</h2>
+      <!-- Elfsight Google Reviews Widget -->
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-50b17601-1bf8-4392-8b24-56941a2b17cc" data-elfsight-app-lazy></div>
+    </section>
+  </main>
+
   <footer>
     <p>&copy; 2025 Revline Performance Garage. All rights reserved.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
