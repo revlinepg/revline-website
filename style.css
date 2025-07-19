@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,12 +12,17 @@ header {
   padding: 20px;
 }
 
+/* Logo Styling */
 .logo {
-  width: 300px;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 h1 {
-  color: #e50914; /* Red */
+  color: #e50914;
 }
 
 nav {
@@ -60,7 +66,8 @@ form {
   flex-direction: column;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   margin: 5px 0;
   padding: 10px;
   background: #222;
@@ -80,26 +87,22 @@ button {
 footer {
   text-align: center;
   padding: 10px;
-  background: #111;
+  background-color: #111;
   color: #555;
   margin-top: 20px;
 }
 
+/* Featured Services Section */
 #featured-services li {
   display: block;
   margin-bottom: 20px;
-}
-
-nav a {
-  margin: 0 40px;
-  text-decoration: none;
 }
 
 #featured-services .services-images {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 300px; 
+  max-width: 300px;
 }
 
 #featured-services .services-images img {
@@ -109,18 +112,17 @@ nav a {
   border: 2px solid #333;
 }
 
+/* Adjust individual image margins if needed */
 #featured-services .services-images img:first-child {
-  margin-left: -300px; 
+  margin-left: -300px;
 }
 
 #featured-services .services-images img:last-child {
   margin-top: 100px;
+  margin-left: -300px;
 }
 
-#featured-services .services-images img:last-child {
-  margin-left: -300px; 
-}
-
+/* Responsive Services Section */
 @media (max-width: 768px) {
   #featured-services {
     flex-direction: column;
@@ -136,19 +138,16 @@ nav a {
     margin-top: 20px;
   }
 
- #featured-services .services-images img {
-  width: 100%;
-  margin-left: 0;
-}
-
-  #featured-services .services-images img:first-child,
-  #featured-services .services-images img:last-child {
+  #featured-services .services-images img {
+    width: 100%;
     margin-left: 0;
   }
 }
 
+/* Additional Services */
 #additional-services {
   text-align: left;
+  padding-left: 40px;
 }
 
 #additional-services ul {
@@ -161,13 +160,9 @@ nav a {
   margin-bottom: 15px;
 }
 
-#additional-services {
-  text-align: left;
-  padding-left: 40px;  /* You can adjust 40px to your liking */
-}
-
+/* Featured Services List Styles */
 #featured-services ul {
-  list-style: none; /* Remove default bullets */
+  list-style: none;
   padding-left: 0;
   margin-top: 20px;
 }
@@ -182,6 +177,7 @@ nav a {
   width: fit-content;
 }
 
+/* Badge List Styles */
 .badge-list {
   list-style: none;
   padding: 0;
@@ -232,7 +228,7 @@ nav ul li a:hover {
   background-color: #333;
 }
 
-/* Responsive behavior on smaller screens */
+/* Responsive Navigation */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -246,5 +242,11 @@ nav ul li a:hover {
   nav ul li a {
     width: 90%;
     text-align: center;
+  }
+
+  .logo {
+    max-width: 120px;
+    margin: 10px auto;
+    display: block;
   }
 }
