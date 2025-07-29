@@ -14,19 +14,23 @@ header {
   padding: 20px;
 }
 
-.logo {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px auto;
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
 
-@media (max-width: 600px) {
-  .logo {
-    max-width: 120px;
-  }
+.logo {
+  max-width: 140px;
+  height: auto;
 }
+
+@media screen and (max-width: 600px) {
+  .logo {
+    max-width: 100px;
+  }
+}s
 h1 {
   color: #e50914;
 }
@@ -250,7 +254,3 @@ nav ul li a:hover {
     text-align: center;
   }
 
-  .logo {
-    max-width: 140px;
-  }
-}
