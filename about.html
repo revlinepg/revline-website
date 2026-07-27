@@ -3,48 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Revline Performance Garage</title>
+  <meta name="description" content="View recent automotive work and customer reviews for Revline Performance Garage in Denver, Colorado." />
+  <link rel="canonical" href="https://revlinepg.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gallery &amp; Reviews | Revline Performance Garage" />
+  <meta property="og:description" content="See recent work from the Revline garage and hear from our customers." />
+  <meta property="og:url" content="https://revlinepg.com/about.html" />
+  <meta property="og:image" content="https://revlinepg.com/evo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Gallery &amp; Reviews | Revline Performance Garage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Revline Performance Garage home">
+      <img src="logo.png" alt="Revline Performance Garage" class="logo" />
+    </a>
+    <div class="header-actions">
+      <a class="icon-button" href="tel:7208001542" aria-label="Call Revline Performance Garage">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+      </a>
+      <a class="button button-primary header-book" href="contact.html">Book Appointment</a>
+      <a class="icon-button" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
 
-<header>
-  <div class="logo-wrapper">
-    <img src="logo.png" alt="Revline Performance Garage Logo" class="logo" />
-  </div>
-</header>
-  <nav>
+  <nav class="site-nav" aria-label="Primary navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Gallery & Reviews</a></li>
+      <li><a class="active" href="about.html">Gallery &amp; Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main>
-    <section id="about">
-      <h2>Gallery</h2>
-      <!-- SnapWidget Instagram Feed -->
-      <iframe 
-        src="https://snapwidget.com/embed/1102785" 
-        class="snapwidget-widget" 
-        allowtransparency="true" 
-        frameborder="0" 
-        scrolling="no" 
-        style="border:none; overflow:hidden; width:100%; height:500px;">
-      </iframe>
+    <section class="page-hero">
+      <p class="eyebrow">Inside the garage</p>
+      <h1>Our work.<br /><span>Your confidence.</span></h1>
+      <p>
+        Follow recent repairs, maintenance, and performance projects from Revline,
+        then see what customers say about their experience.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="contact.html">Book an Appointment</a>
+        <a class="button button-secondary" href="https://maps.app.goo.gl/7xe9wHpG39CP3UYK8" target="_blank" rel="noopener">
+          View Google Profile
+        </a>
+      </div>
+    </section>
 
-      <h2>Reviews</h2>
-      <!-- Elfsight Google Reviews Widget -->
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-50b17601-1bf8-4392-8b24-56941a2b17cc" data-elfsight-app-lazy></div>
+    <section class="section gallery-page-section" aria-labelledby="gallery-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Latest projects</p>
+          <h2 id="gallery-title">From our Instagram</h2>
+          <p>New work appears here as it is shared by the Revline team.</p>
+        </div>
+        <a class="text-link" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener">
+          Follow @revline.pg <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="embed-panel">
+        <iframe
+          src="https://snapwidget.com/embed/1102785"
+          title="Recent Revline Performance Garage Instagram posts"
+          class="snapwidget-widget"
+          allowtransparency="true"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="section reviews-section" aria-labelledby="reviews-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Customer feedback</p>
+          <h2 id="reviews-title">Google reviews</h2>
+          <p>Auto-updating reviews from our official Google Business profile.</p>
+        </div>
+        <a class="button button-secondary" href="https://maps.app.goo.gl/7xe9wHpG39CP3UYK8" target="_blank" rel="noopener">
+          Read or Leave a Review
+        </a>
+      </div>
+
+      <div class="embed-panel reviews-panel">
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-50b17601-1bf8-4392-8b24-56941a2b17cc" data-elfsight-app-lazy></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div>
+        <p class="eyebrow">Your vehicle could be next</p>
+        <h2>Ready to plan your service?</h2>
+        <p>Tell us what your vehicle needs and we’ll help you choose the next step.</p>
+      </div>
+      <div class="final-cta-actions">
+        <a class="button button-light" href="contact.html">Book an Appointment</a>
+        <a class="button button-dark" href="tel:7208001542">Call Now</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Revline Performance Garage. All rights reserved.</p>
+  <footer class="site-footer">
+    <img src="logo.png" alt="Revline Performance Garage" class="footer-logo" />
+    <div>
+      <p>&copy; 2026 Revline Performance Garage. All rights reserved.</p>
+      <a class="footer-address" href="https://www.google.com/maps/search/?api=1&amp;query=1000+E+73rd+Ave+Unit+7313+Denver+CO+80229" target="_blank" rel="noopener">
+        1000 E 73rd Ave, Unit 7313, Denver, CO 80229
+      </a>
+      <p class="legal-links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </div>
+    <a class="footer-instagram" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

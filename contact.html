@@ -2,28 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Revline Performance Garage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Revline Performance Garage in Denver to request automotive maintenance, repair, diagnostics, or performance service." />
+  <link rel="canonical" href="https://revlinepg.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact | Revline Performance Garage" />
+  <meta property="og:description" content="Tell us what your vehicle needs and request an appointment with Revline Performance Garage." />
+  <meta property="og:url" content="https://revlinepg.com/contact.html" />
+  <meta property="og:image" content="https://revlinepg.com/evo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Contact | Revline Performance Garage</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Revline Performance Garage Logo" class="logo"/>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Revline Performance Garage home">
+      <img src="logo.png" alt="Revline Performance Garage" class="logo" />
+    </a>
+    <div class="header-actions">
+      <a class="icon-button" href="tel:7208001542" aria-label="Call Revline Performance Garage">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+      </a>
+      <a class="button button-primary header-book" href="#contact-form">Book Appointment</a>
+      <a class="icon-button" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
   </header>
- <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">Gallery & Reviews</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Gallery &amp; Reviews</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section id="contact" class="contact-page">
+    <section class="page-hero contact-hero">
+      <p class="eyebrow">Let’s talk about your vehicle</p>
+      <h1>Contact<br /><span>Revline.</span></h1>
+      <p>
+        Tell us what you drive, what you’re noticing, and what you’d like to accomplish.
+        We’ll help you plan the right next step.
+      </p>
+    </section>
+
+    <section id="contact" class="section contact-page" aria-labelledby="contact-title">
       <div class="section-heading">
         <p class="eyebrow">Get in touch</p>
-        <h2>Contact Revline</h2>
-        <p>Tell us what your vehicle needs and we’ll help you plan the next step.</p>
+        <h2 id="contact-title">Visit, call, or send a message</h2>
       </div>
 
       <div class="contact-layout">
@@ -59,18 +88,48 @@
           </article>
         </div>
 
-        <form action="https://formspree.io/f/meozjrrw" method="POST">
-          <input type="text" name="name" placeholder="Your Name" aria-label="Your name" required />
-          <input type="email" name="email" placeholder="Your Email" aria-label="Your email" required />
-          <textarea name="message" placeholder="Tell us about your vehicle and the service you need" aria-label="Your message" required></textarea>
-          <button type="submit">Send Message</button>
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/meozjrrw" method="POST">
+          <div class="form-heading">
+            <h3>Request an appointment</h3>
+            <p>Share a few details and we’ll follow up with you.</p>
+          </div>
+
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" name="name" placeholder="Your name" autocomplete="name" required />
+
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+
+          <label for="contact-phone">Phone <span>(optional)</span></label>
+          <input id="contact-phone" type="tel" name="phone" placeholder="720-555-0000" autocomplete="tel" />
+
+          <label for="contact-message">How can we help?</label>
+          <textarea id="contact-message" name="message" placeholder="Tell us your vehicle’s year, make, model, and the service you need" required></textarea>
+
+          <input type="hidden" name="_subject" value="New appointment request from revlinepg.com" />
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit">Send Request</button>
+          <p class="form-note">Submitting this form requests a follow-up; it does not confirm an appointment time.</p>
         </form>
       </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Revline Performance Garage. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <img src="logo.png" alt="Revline Performance Garage" class="footer-logo" />
+    <div>
+      <p>&copy; 2026 Revline Performance Garage. All rights reserved.</p>
+      <a class="footer-address" href="https://www.google.com/maps/search/?api=1&amp;query=1000+E+73rd+Ave+Unit+7313+Denver+CO+80229" target="_blank" rel="noopener">
+        1000 E 73rd Ave, Unit 7313, Denver, CO 80229
+      </a>
+      <p class="legal-links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </div>
+    <a class="footer-instagram" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>

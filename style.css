@@ -221,6 +221,112 @@ main {
   margin: 0 auto;
 }
 
+.page-hero,
+.legal-hero {
+  max-width: 850px;
+  padding: clamp(72px, 10vw, 132px) 0 clamp(54px, 8vw, 92px);
+}
+
+.page-hero h1,
+.legal-hero h1 {
+  margin-bottom: 22px;
+}
+
+.page-hero > p:not(.eyebrow),
+.legal-hero > p:not(.eyebrow, .legal-updated) {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.page-hero .hero-actions {
+  margin-top: 30px;
+}
+
+.contact-hero {
+  padding-bottom: 24px;
+}
+
+.embed-panel {
+  min-height: 260px;
+  padding: clamp(14px, 2vw, 22px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.embed-panel .snapwidget-widget {
+  width: 100%;
+  height: 560px;
+  display: block;
+  border: 0;
+}
+
+.reviews-panel {
+  min-height: 320px;
+}
+
+.gallery-page-section {
+  padding-top: 20px;
+}
+
+.legal-updated {
+  margin: 24px 0 0;
+  color: #85858b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legal-page {
+  max-width: 900px;
+  margin: 0 auto 100px;
+  display: grid;
+  gap: 14px;
+}
+
+.legal-page section {
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.legal-page h2 {
+  margin-bottom: 14px;
+  color: #fff;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--muted);
+}
+
+.legal-page p:last-child,
+.legal-page ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-page ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.legal-page li + li {
+  margin-top: 8px;
+}
+
+.legal-page a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration-color: var(--red);
+  text-underline-offset: 3px;
+}
+
 .hero {
   min-height: 680px;
   padding: 72px 0;
@@ -886,7 +992,7 @@ footer p {
 }
 
 .contact-page {
-  padding: 80px 0 100px;
+  padding: 36px 0 100px;
 }
 
 .contact-layout {
@@ -934,15 +1040,43 @@ footer p {
 
 .contact-layout form {
   align-content: start;
-  padding: 24px;
+  padding: clamp(24px, 4vw, 36px);
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
 }
 
+.form-heading {
+  margin-bottom: 8px;
+}
+
+.form-heading h3 {
+  margin-bottom: 6px;
+  font-size: 1.35rem;
+}
+
+.form-heading p,
+.form-note {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 form {
   display: grid;
-  gap: 12px;
+  gap: 9px;
+}
+
+form label {
+  margin-top: 7px;
+  color: #e8e8ea;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+form label span {
+  color: #83838a;
+  font-weight: 400;
 }
 
 form input,
@@ -962,6 +1096,7 @@ form textarea {
 }
 
 button {
+  margin-top: 9px;
   padding: 13px 18px;
   border: 0;
   border-radius: 8px;
@@ -972,17 +1107,11 @@ button {
   font-weight: 800;
 }
 
-body > h2,
-body > h3,
-body > p,
-body > ul {
-  width: min(900px, calc(100% - 40px));
-  margin-right: auto;
-  margin-left: auto;
-}
-
-body > h2 {
-  margin-top: 64px;
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .snapwidget-widget {
@@ -1027,6 +1156,10 @@ body > h2 {
 
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .embed-panel .snapwidget-widget {
+    height: 500px;
   }
 
   .final-cta {
@@ -1117,6 +1250,11 @@ body > h2 {
     padding: 72px 0;
   }
 
+  .page-hero,
+  .legal-hero {
+    padding: 64px 0 50px;
+  }
+
   .credential {
     padding: 20px;
   }
@@ -1190,6 +1328,18 @@ body > h2 {
   .site-footer,
   footer {
     flex-direction: column;
+  }
+
+  .embed-panel {
+    padding: 10px;
+  }
+
+  .embed-panel .snapwidget-widget {
+    height: 430px;
+  }
+
+  .legal-page {
+    margin-bottom: 72px;
   }
 
   .footer-logo {
