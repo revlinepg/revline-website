@@ -645,22 +645,55 @@ main {
   margin-left: auto;
 }
 
-.badge-list {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+.appearance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.badge-list span,
-.badge-list li {
-  padding: 10px 17px;
-  border: 1px solid #d7d7db;
-  border-radius: 999px;
-  background: var(--white);
-  color: #121212;
-  font-weight: 800;
-  list-style: none;
+.appearance-service {
+  min-height: 154px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(229, 9, 20, 0.07), transparent 48%),
+    var(--surface);
+  text-align: left;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.appearance-service:hover {
+  transform: translateY(-3px);
+  border-color: rgba(229, 9, 20, 0.5);
+}
+
+.appearance-service > i {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(229, 9, 20, 0.34);
+  border-radius: 10px;
+  background: rgba(229, 9, 20, 0.1);
+  color: var(--red);
+}
+
+.appearance-service h3 {
+  margin: 1px 0 8px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.appearance-service p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.6;
 }
 
 .final-cta {
@@ -857,7 +890,8 @@ body > h2 {
   }
 
   .service-grid,
-  .service-list {
+  .service-list,
+  .appearance-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -982,8 +1016,13 @@ body > h2 {
 
   .service-grid,
   .service-list,
-  .work-grid {
+  .work-grid,
+  .appearance-grid {
     grid-template-columns: 1fr;
+  }
+
+  .appearance-service {
+    min-height: 0;
   }
 
   .partner-section {
