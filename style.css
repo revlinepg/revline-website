@@ -1,7 +1,7 @@
 :root {
   --red: #e50914;
   --red-dark: #aa0710;
-  --black: #050505;
+  --black: #000000;
   --surface: #111214;
   --surface-light: #191a1e;
   --line: #2a2b30;
@@ -950,7 +950,7 @@ footer {
   justify-content: space-between;
   gap: 24px;
   border-top: 1px solid var(--line);
-  background: #080808;
+  background: #000000;
   color: #78787e;
   font-size: 0.82rem;
   text-align: center;
