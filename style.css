@@ -305,6 +305,62 @@ main {
   text-transform: uppercase;
 }
 
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 0 40px;
+}
+
+.credential {
+  padding: 24px 26px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #17181b, #0d0e10);
+}
+
+.credential-icon {
+  width: 62px;
+  height: 62px;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(229, 9, 20, 0.1);
+  color: var(--red);
+  font-size: 1.55rem;
+}
+
+.credential-icon.ase-icon {
+  border-radius: 14px;
+}
+
+.credential-label {
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.credential h2 {
+  margin-bottom: 5px;
+  color: var(--white);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.025em;
+}
+
+.credential p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
 .section {
   padding: 96px 0;
 }
@@ -641,6 +697,10 @@ body > h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+
   .why-revline {
     grid-template-columns: 1fr;
   }
@@ -731,6 +791,16 @@ body > h2 {
 
   .section {
     padding: 72px 0;
+  }
+
+  .credential {
+    padding: 20px;
+  }
+
+  .credential-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
   }
 
   .section-heading {
