@@ -95,8 +95,10 @@ h3 {
 }
 
 .logo {
-  width: 150px;
+  width: 220px;
+  max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .header-actions,
@@ -960,7 +962,8 @@ footer p {
 }
 
 .footer-logo {
-  width: 90px;
+  width: 150px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -1189,7 +1192,7 @@ button {
   }
 
   .logo {
-    width: 100px;
+    width: 150px;
   }
 
   .header-book {
@@ -1353,7 +1356,7 @@ button {
   }
 
   .footer-logo {
-    width: 78px;
+    width: 120px;
   }
 }
 
