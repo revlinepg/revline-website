@@ -603,6 +603,39 @@ main {
   height: auto;
   display: block;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.36));
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.partner-logo-link {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  color: #e8d28a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.partner-logo-link span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.partner-logo-link:hover .partner-logo {
+  transform: translateY(-3px) scale(1.015);
+  filter: drop-shadow(0 16px 28px rgba(214, 175, 61, 0.18));
+}
+
+.partner-logo-link:hover span {
+  color: #fff;
+}
+
+.partner-logo-link:focus-visible {
+  outline: 2px solid #e8d28a;
+  outline-offset: 8px;
+  border-radius: 8px;
 }
 
 .faq-section {
