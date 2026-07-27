@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revline Performance Garage</title>
+  <title>Contact Revline Performance Garage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -18,16 +19,55 @@
   </ul>
 </nav>
   <main>
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/meozjrrw" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required/>
-  <input type="email" name="email" placeholder="Your Email" required/>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-  </section>
-</main>
+    <section id="contact" class="contact-page">
+      <div class="section-heading">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Contact Revline</h2>
+        <p>Tell us what your vehicle needs and we’ll help you plan the next step.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-details">
+          <article class="contact-card">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <h3>Visit the Garage</h3>
+              <address>
+                1000 E 73rd Ave, Unit 7313<br />
+                Denver, CO 80229
+              </address>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=1000+E+73rd+Ave+Unit+7313+Denver+CO+80229" target="_blank" rel="noopener">
+                Get Directions <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <div>
+              <h3>Call Us</h3>
+              <a href="tel:7208001542">720-800-1542</a>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <div>
+              <h3>Email Us</h3>
+              <a href="mailto:info@revlinepg.com">info@revlinepg.com</a>
+            </div>
+          </article>
+        </div>
+
+        <form action="https://formspree.io/f/meozjrrw" method="POST">
+          <input type="text" name="name" placeholder="Your Name" aria-label="Your name" required />
+          <input type="email" name="email" placeholder="Your Email" aria-label="Your email" required />
+          <textarea name="message" placeholder="Tell us about your vehicle and the service you need" aria-label="Your message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
   <footer>
     <p>&copy; 2025 Revline Performance Garage. All rights reserved.</p>
   </footer>
