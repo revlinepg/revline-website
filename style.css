@@ -962,9 +962,10 @@ footer p {
 }
 
 .footer-logo {
-  width: 150px;
+  width: 72px;
   max-width: 100%;
   height: auto;
+  border-radius: 14px;
 }
 
 .legal-links {
@@ -1356,7 +1357,7 @@ button {
   }
 
   .footer-logo {
-    width: 120px;
+    width: 58px;
   }
 }
 
