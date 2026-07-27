@@ -979,6 +979,10 @@ footer p {
   color: #aaaab0;
 }
 
+.mobile-contact-bar {
+  display: none;
+}
+
 .footer-instagram {
   color: var(--white);
   font-size: 1.35rem;
@@ -1185,6 +1189,7 @@ button {
 @media (max-width: 640px) {
   body {
     font-size: 15px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
   }
 
   .site-header {
@@ -1358,6 +1363,45 @@ button {
 
   .footer-logo {
     width: 58px;
+  }
+
+  .mobile-contact-bar {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: minmax(104px, 0.8fr) minmax(170px, 1.2fr);
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid #2a2b30;
+    background: rgba(0, 0, 0, 0.96);
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-contact-bar a {
+    min-height: 48px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mobile-contact-call {
+    border: 1px solid #34353a;
+    background: #17181b;
+  }
+
+  .mobile-contact-book {
+    background: var(--red);
   }
 }
 
