@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Revline Performance Garage provides automotive repair, maintenance, diagnostics, and performance services in Colorado." />
-  <link rel="canonical" href="https://revlinepg.com/" />
+  <meta name="description" content="Denver auto repair and performance shop for maintenance, diagnostics, brakes, engine repair, suspension, electrical service, and custom upgrades." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.revlinepg.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Revline Performance Garage | Denver Automotive Service" />
-  <meta property="og:description" content="Automotive maintenance, repair, diagnostics, and performance work backed by more than nine years of experience." />
-  <meta property="og:url" content="https://revlinepg.com/" />
-  <meta property="og:image" content="https://revlinepg.com/og.jpg" />
+  <meta property="og:title" content="Denver Auto Repair &amp; Performance Shop | Revline" />
+  <meta property="og:description" content="Honest Denver automotive repair, maintenance, diagnostics, and performance work backed by more than nine years of experience." />
+  <meta property="og:url" content="https://www.revlinepg.com/" />
+  <meta property="og:image" content="https://www.revlinepg.com/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://revlinepg.com/og.jpg" />
-  <title>Revline Performance Garage</title>
+  <meta name="twitter:image" content="https://www.revlinepg.com/og.jpg" />
+  <title>Denver Auto Repair &amp; Performance Shop | Revline</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -24,8 +25,13 @@
       "@context": "https://schema.org",
       "@type": "AutoRepair",
       "name": "Revline Performance Garage",
-      "url": "https://revlinepg.com/",
-      "image": "https://revlinepg.com/evo.jpg",
+      "@id": "https://www.revlinepg.com/#business",
+      "url": "https://www.revlinepg.com/",
+      "logo": "https://www.revlinepg.com/logo.png",
+      "image": [
+        "https://www.revlinepg.com/og.jpg",
+        "https://www.revlinepg.com/evo.jpg"
+      ],
       "telephone": "+1-720-800-1542",
       "email": "admin@revlinepg.com",
       "address": {
@@ -35,6 +41,36 @@
         "addressRegion": "CO",
         "postalCode": "80229",
         "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Denver"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Automotive Repair and Performance Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Maintenance and Diagnostics"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Engine and Transmission Repair"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Brake, Suspension, and Steering Service"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Electrical, Heating, and Air Conditioning Service"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Performance Upgrades and Custom Automotive Work"
+          }
+        ]
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -51,6 +87,46 @@
       "sameAs": [
         "https://www.instagram.com/revline.pg",
         "https://maps.app.goo.gl/7xe9wHpG39CP3UYK8"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need an appointment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Appointments are recommended so Revline can reserve time for your vehicle and understand what it needs before you arrive. Call or use the contact form to request a time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What automotive services does Revline Performance Garage provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Revline provides routine maintenance, diagnostics, mechanical repairs, brake and suspension service, electrical work, tire service, inspections, performance upgrades, and custom automotive projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Revline Performance Garage located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Revline Performance Garage is located at 1000 E 73rd Ave, Unit 7313, Denver, Colorado 80229."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Revline Performance Garage's business hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Revline Performance Garage is open Monday through Friday from 10:00 AM to 6:00 PM."
+          }
+        }
       ]
     }
   </script>
@@ -75,6 +151,7 @@
   <nav class="site-nav" aria-label="Primary navigation">
     <ul>
       <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="about.html">Gallery &amp; Reviews</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -84,12 +161,12 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Colorado automotive care &amp; performance</p>
-        <h1>Built for the road.<br /><span>Ready for more.</span></h1>
+        <p class="eyebrow">Denver auto repair &amp; performance</p>
+        <h1>Denver auto repair.<br /><span>Built for more.</span></h1>
         <p class="hero-intro">
-          From everyday maintenance to performance builds, Revline delivers honest
-          automotive service, clear communication, and quality workmanship backed
-          by more than nine years of experience.
+          Revline Performance Garage is a Denver automotive repair shop for everyday
+          maintenance, diagnostics, mechanical repairs, and performance builds—backed
+          by clear communication and more than nine years of experience.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="contact.html">Book an Appointment</a>
@@ -138,6 +215,25 @@
       </div>
     </section>
 
+    <section class="section local-intro" aria-labelledby="denver-shop-title">
+      <div>
+        <p class="eyebrow">Local automotive care</p>
+        <h2 id="denver-shop-title">A Denver auto repair shop for maintenance, diagnostics, and performance.</h2>
+      </div>
+      <div class="local-intro-copy">
+        <p>
+          Located at 1000 E 73rd Ave in Denver, Revline helps local drivers care for
+          daily commuters, project cars, and performance vehicles. We take time to
+          understand the concern, explain the options, and recommend the work that
+          fits your vehicle and goals.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="services.html">Explore Auto Repair Services</a>
+          <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=1000+E+73rd+Ave+Unit+7313+Denver+CO+80229" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section services-overview" aria-labelledby="services-title">
       <div class="section-heading">
         <p class="eyebrow">What we do</p>
@@ -150,31 +246,37 @@
           <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
           <h3>Maintenance &amp; Diagnostics</h3>
           <p>Oil changes, inspections, diagnostics, cooling systems, and preventative care.</p>
+          <a class="service-card-link" href="services.html#maintenance">Maintenance services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
         <article class="service-card">
           <i class="fas fa-gears" aria-hidden="true"></i>
           <h3>Engine &amp; Transmission</h3>
           <p>Engine repair, transmission service, timing components, and drivetrain work.</p>
+          <a class="service-card-link" href="services.html#engine-transmission">Engine services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
         <article class="service-card">
           <i class="fas fa-car-side" aria-hidden="true"></i>
           <h3>Brakes &amp; Suspension</h3>
           <p>Brake replacement, suspension repair, steering service, and wheel alignment.</p>
+          <a class="service-card-link" href="services.html#brakes-suspension">Brake and suspension services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
         <article class="service-card">
           <i class="fas fa-bolt" aria-hidden="true"></i>
           <h3>Electrical &amp; Climate</h3>
           <p>Electrical diagnosis, batteries, air conditioning, and heating service.</p>
+          <a class="service-card-link" href="services.html#electrical-climate">Electrical and climate services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
         <article class="service-card">
           <i class="fas fa-flag-checkered" aria-hidden="true"></i>
           <h3>Performance &amp; Custom</h3>
           <p>Performance tuning, exhaust fabrication, parts installation, and custom builds.</p>
+          <a class="service-card-link" href="services.html#performance">Performance services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
         <article class="service-card">
           <i class="fas fa-tire" aria-hidden="true"></i>
           <h3>Tires &amp; Inspections</h3>
           <p>Tire mounting, balancing, replacement, and pre-purchase vehicle inspections.</p>
+          <a class="service-card-link" href="services.html#tires-inspections">Tire and inspection services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </article>
       </div>
 
