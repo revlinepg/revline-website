@@ -386,6 +386,18 @@ main {
   flex-direction: column;
 }
 
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 24px;
+  border: 1px solid #3b3c42;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  background: #111214;
+}
+
 .product-placeholder {
   aspect-ratio: 4 / 3;
   margin-bottom: 24px;
@@ -416,6 +428,13 @@ main {
 .product-card .button {
   width: 100%;
   margin-top: auto;
+}
+
+.product-availability {
+  margin-top: 4px;
+  color: var(--white) !important;
+  font-size: 0.85rem;
+  font-weight: 800;
 }
 
 .shop-note {
