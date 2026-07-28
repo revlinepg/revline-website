@@ -291,22 +291,16 @@ main {
   border-radius: 50%;
   display: grid;
   place-content: center;
-  gap: 12px;
+  overflow: hidden;
   background: radial-gradient(circle at 35% 30%, #2b2c31, #111214 58%, #050505);
   box-shadow: var(--shadow);
-  color: var(--red);
-  text-align: center;
 }
 
-.shop-hero-mark i {
-  font-size: clamp(3rem, 8vw, 6rem);
-}
-
-.shop-hero-mark span {
-  color: var(--white);
-  font-size: clamp(1rem, 2.6vw, 1.6rem);
-  font-weight: 900;
-  letter-spacing: 0.2em;
+.shop-hero-logo {
+  width: 78%;
+  height: auto;
+  display: block;
+  margin: auto;
 }
 
 .product-search {
