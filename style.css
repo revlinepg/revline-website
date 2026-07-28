@@ -430,16 +430,44 @@ main {
   margin-top: auto;
 }
 
-.product-availability {
-  margin-top: 4px;
-  color: var(--white) !important;
-  font-size: 0.85rem;
+.product-order-details {
+  margin: 10px 0 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.product-price,
+.product-sizes {
+  margin: 0;
+}
+
+.product-price {
+  color: var(--white);
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.product-sizes {
+  color: var(--muted);
+  font-size: 0.82rem;
   font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .shop-note {
   margin-top: 22px;
   text-align: center;
+}
+
+.shop-note-secondary {
+  margin-top: 8px;
+  font-size: 0.82rem;
 }
 
 [aria-disabled="true"] {
