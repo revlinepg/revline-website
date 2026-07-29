@@ -2866,6 +2866,325 @@ button {
   }
 }
 
+/* Ask RPG website assistant */
+.rpg-chat-launcher {
+  position: fixed;
+  z-index: 160;
+  right: 22px;
+  bottom: 22px;
+  min-height: 56px;
+  margin: 0;
+  padding: 7px 16px 7px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #e50914;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52), 0 0 0 4px rgba(229, 9, 20, 0.12);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.rpg-chat-launcher:hover {
+  transform: translateY(-3px);
+  background: #ff202a;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.58), 0 0 0 5px rgba(229, 9, 20, 0.16);
+}
+
+.rpg-chat-launcher img {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  object-fit: cover;
+  background: #09090a;
+}
+
+.rpg-chat-launcher i {
+  display: none;
+}
+
+.rpg-chat-launcher.is-open {
+  transform: scale(0.96);
+}
+
+.rpg-chat-panel {
+  position: fixed;
+  z-index: 159;
+  right: 22px;
+  bottom: 90px;
+  width: min(410px, calc(100vw - 28px));
+  height: min(650px, calc(100vh - 120px));
+  overflow: hidden;
+  border: 1px solid #36373d;
+  border-radius: 22px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+  background:
+    radial-gradient(circle at 85% 0, rgba(229, 9, 20, 0.12), transparent 32%),
+    #0d0e10;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.72);
+}
+
+.rpg-chat-panel[hidden] {
+  display: none;
+}
+
+.rpg-chat-header {
+  padding: 15px 16px;
+  border-bottom: 1px solid #2c2d32;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: rgba(18, 19, 22, 0.96);
+}
+
+.rpg-chat-identity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.rpg-chat-identity img {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border: 1px solid rgba(229, 9, 20, 0.5);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.rpg-chat-identity div {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.rpg-chat-identity strong {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.rpg-chat-identity span {
+  overflow: hidden;
+  color: #a8a8ae;
+  font-size: 0.7rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rpg-chat-identity span i {
+  width: 7px;
+  height: 7px;
+  margin-right: 4px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #29c267;
+  box-shadow: 0 0 10px rgba(41, 194, 103, 0.7);
+}
+
+.rpg-chat-close {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #34353a;
+  border-radius: 10px;
+  background: #191a1e;
+  color: #d7d7da;
+}
+
+.rpg-chat-close:hover {
+  background: #24252a;
+  color: #fff;
+}
+
+.rpg-chat-messages {
+  padding: 18px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  overscroll-behavior: contain;
+  scrollbar-color: #494a50 transparent;
+}
+
+.rpg-chat-message {
+  max-width: 88%;
+  display: grid;
+  gap: 4px;
+}
+
+.rpg-chat-message-assistant {
+  align-self: flex-start;
+}
+
+.rpg-chat-message-user {
+  align-self: flex-end;
+}
+
+.rpg-chat-message-label {
+  padding: 0 5px;
+  color: #7e7e84;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rpg-chat-message-user .rpg-chat-message-label {
+  text-align: right;
+}
+
+.rpg-chat-message p {
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid #2d2e33;
+  border-radius: 4px 14px 14px;
+  background: #18191d;
+  color: #f1f1f2;
+  font-size: 0.83rem;
+  line-height: 1.52;
+  white-space: pre-wrap;
+}
+
+.rpg-chat-message-user p {
+  border-color: rgba(229, 9, 20, 0.68);
+  border-radius: 14px 4px 14px 14px;
+  background: #c90812;
+  color: #fff;
+}
+
+.rpg-chat-suggestions {
+  padding: 0 14px 10px;
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rpg-chat-suggestions::-webkit-scrollbar {
+  display: none;
+}
+
+.rpg-chat-suggestions button,
+.rpg-chat-suggestions a {
+  min-width: max-content;
+  min-height: 34px;
+  margin: 0;
+  padding: 7px 10px;
+  border: 1px solid #35363c;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  background: #151619;
+  color: #d6d6da;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.rpg-chat-suggestions button:hover,
+.rpg-chat-suggestions a:hover {
+  border-color: var(--red);
+  color: #fff;
+}
+
+.rpg-chat-form {
+  margin: 0 14px;
+  padding: 7px;
+  border: 1px solid #37383e;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  align-items: end;
+  gap: 7px;
+  background: #17181b;
+}
+
+.rpg-chat-form textarea {
+  min-height: 42px;
+  max-height: 104px;
+  margin: 0;
+  padding: 9px 8px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.rpg-chat-form textarea::placeholder {
+  color: #818187;
+}
+
+.rpg-chat-form button {
+  width: 42px;
+  height: 42px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.rpg-chat-form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.rpg-chat-note {
+  margin: 0;
+  padding: 9px 16px 12px;
+  color: #77777d;
+  font-size: 0.59rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .rpg-chat-launcher {
+    right: 14px;
+    bottom: calc(88px + env(safe-area-inset-bottom));
+    min-height: 50px;
+    padding: 5px;
+  }
+
+  .rpg-chat-launcher img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rpg-chat-launcher span {
+    display: none;
+  }
+
+  .rpg-chat-launcher i {
+    width: 28px;
+    display: inline;
+  }
+
+  .rpg-chat-panel {
+    right: 14px;
+    bottom: calc(148px + env(safe-area-inset-bottom));
+    width: calc(100vw - 28px);
+    height: min(620px, calc(100vh - 170px - env(safe-area-inset-bottom)));
+    border-radius: 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
