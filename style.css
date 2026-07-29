@@ -471,6 +471,296 @@ main {
   text-transform: uppercase;
 }
 
+.accessory-category {
+  border-color: rgba(229, 9, 20, 0.34);
+  background:
+    linear-gradient(145deg, rgba(229, 9, 20, 0.08), transparent 58%),
+    var(--surface);
+}
+
+.accessories-section {
+  border-top: 1px solid var(--line);
+}
+
+.launch-status {
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  border-radius: 999px;
+  background: rgba(229, 9, 20, 0.09);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.launch-status i {
+  color: var(--red);
+}
+
+.accessory-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.accessory-card {
+  min-width: 0;
+}
+
+.accessory-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 24px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #34353a;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(229, 9, 20, 0.16), transparent 42%),
+    linear-gradient(145deg, #1b1c20, #080809);
+}
+
+.accessory-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.075), transparent 30%);
+}
+
+.freshener-string {
+  position: absolute;
+  top: -8px;
+  width: 2px;
+  height: 62px;
+  border-radius: 2px;
+  background: #b7b7bc;
+}
+
+.freshener-body {
+  width: 96px;
+  height: 116px;
+  margin-top: 24px;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(18% 0, 82% 0, 100% 24%, 92% 100%, 8% 100%, 0 24%);
+  background: linear-gradient(145deg, #202126, #050506);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+}
+
+.freshener-body img {
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+}
+
+.accessory-keychain {
+  align-content: center;
+}
+
+.keychain-ring {
+  position: absolute;
+  top: 22px;
+  width: 54px;
+  height: 54px;
+  border: 6px solid #bcbcc1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #45464b;
+}
+
+.keychain-link {
+  position: absolute;
+  top: 70px;
+  width: 17px;
+  height: 38px;
+  border: 4px solid #98999f;
+  border-radius: 8px;
+}
+
+.keychain-tag {
+  width: 94px;
+  height: 112px;
+  margin-top: 70px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #33343a;
+  border-radius: 18px 18px 26px 26px;
+  background: #09090a;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.44);
+}
+
+.keychain-tag img {
+  width: 60px;
+  border-radius: 14px;
+}
+
+.plate-frame {
+  width: 86%;
+  aspect-ratio: 2 / 1;
+  padding: 10px 14px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: center;
+  border: 9px solid #0b0b0c;
+  border-radius: 12px;
+  outline: 2px solid #3a3b40;
+  background: #050506;
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+
+.frame-top,
+.frame-bottom {
+  color: #fff;
+  font-size: clamp(0.45rem, 1vw, 0.66rem);
+  letter-spacing: 0.11em;
+}
+
+.frame-bottom {
+  color: var(--red);
+}
+
+.frame-window {
+  width: 84%;
+  height: 70%;
+  display: grid;
+  place-items: center;
+  border: 1px solid #3a3b40;
+  border-radius: 4px;
+  background: #17181b;
+}
+
+.frame-window img {
+  width: 42px;
+  border-radius: 9px;
+}
+
+.accessory-decals {
+  isolation: isolate;
+}
+
+.decal {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 2px solid #e8e8eb;
+  background: #09090a;
+  color: #fff;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  box-shadow: 0 16px 25px rgba(0, 0, 0, 0.42);
+}
+
+.decal-one {
+  width: 98px;
+  height: 98px;
+  left: 18%;
+  top: 20%;
+  z-index: 3;
+  border-radius: 24px;
+  transform: rotate(-9deg);
+}
+
+.decal-one img {
+  width: 72px;
+  border-radius: 16px;
+}
+
+.decal-two {
+  width: 140px;
+  height: 54px;
+  right: 9%;
+  top: 24%;
+  z-index: 2;
+  border-radius: 12px;
+  color: var(--red);
+  transform: rotate(8deg);
+}
+
+.decal-three {
+  width: 90px;
+  height: 58px;
+  right: 17%;
+  bottom: 20%;
+  z-index: 1;
+  border-radius: 50%;
+  transform: rotate(-4deg);
+}
+
+.accessory-price {
+  margin: auto 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: #fff !important;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.accessory-launch-panel {
+  margin-top: 26px;
+  padding: clamp(24px, 4vw, 38px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(300px, 1.15fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(229, 9, 20, 0.12), transparent 42%),
+    var(--surface);
+}
+
+.accessory-launch-panel h3 {
+  margin: 8px 0 8px;
+  color: #fff;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+.accessory-launch-panel p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.accessory-alert-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.accessory-alert-form > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.accessory-alert-form input[type="email"] {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #35363b;
+  border-radius: 8px;
+  background: #0b0b0d;
+}
+
+.accessory-alert-form button {
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
 .shop-note {
   margin-top: 22px;
   text-align: center;
@@ -2064,8 +2354,13 @@ button {
   }
 
   .shop-category-grid,
-  .product-grid {
+  .product-grid,
+  .accessory-product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accessory-launch-panel {
+    grid-template-columns: 1fr;
   }
 
   .hero-media {
@@ -2235,8 +2530,17 @@ button {
   .work-grid,
   .appearance-grid,
   .shop-category-grid,
-  .product-grid {
+  .product-grid,
+  .accessory-product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .accessory-alert-form > div {
+    grid-template-columns: 1fr;
+  }
+
+  .accessory-alert-form button {
+    width: 100%;
   }
 
   .shop-hero {
