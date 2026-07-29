@@ -1136,6 +1136,19 @@ main {
   gap: 7px;
 }
 
+.partner-logo-link .partner-role {
+  color: #e8d28a;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.partner-logo-link .partner-visit {
+  color: #a9a9ae;
+  font-size: 0.72rem;
+}
+
 .partner-logo-link:hover .partner-logo {
   transform: translateY(-3px) scale(1.015);
   filter: drop-shadow(0 16px 28px rgba(214, 175, 61, 0.18));
