@@ -1105,7 +1105,7 @@ main {
   background: rgba(0, 0, 0, 0.34);
 }
 
-.partner-badge-stack {
+.partner-card-stack {
   width: 100%;
   display: grid;
   gap: 18px;
@@ -1152,19 +1152,22 @@ main {
 }
 
 .geoshield-partner-badge {
-  width: min(100%, 440px);
-  margin: 2px auto 0;
-  padding: 16px 22px;
+  width: 100%;
   grid-template-columns: 66px minmax(0, 1fr);
   align-items: center;
   justify-items: start;
   gap: 16px;
-  border: 1px solid rgba(255, 145, 0, 0.42);
-  border-radius: 14px;
-  background:
-    linear-gradient(110deg, rgba(255, 145, 0, 0.13), transparent 52%),
-    #111214;
   color: #fff;
+}
+
+.geoshield-partner-wrap {
+  min-height: 118px;
+  padding: 18px 24px;
+  border-color: rgba(255, 145, 0, 0.42);
+  background:
+    linear-gradient(110deg, rgba(255, 145, 0, 0.14), transparent 56%),
+    rgba(0, 0, 0, 0.46);
+  transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .partner-logo-geoshield {
@@ -1195,8 +1198,9 @@ main {
   text-transform: uppercase;
 }
 
-.geoshield-partner-badge:hover {
+.geoshield-partner-wrap:hover {
   border-color: rgba(255, 145, 0, 0.78);
+  transform: translateY(-2px);
 }
 
 .geoshield-partner-badge:hover .partner-logo-geoshield {
