@@ -365,6 +365,17 @@ main {
   font-size: 1.8rem;
 }
 
+.geoshield-category-logo {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  display: block;
+  border: 1px solid rgba(255, 145, 0, 0.45);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.34);
+}
+
 .category-status,
 .product-type {
   margin-bottom: 8px;
@@ -1561,6 +1572,46 @@ button {
   max-width: 690px;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.17rem);
+}
+
+.geoshield-dealer-lockup {
+  width: fit-content;
+  margin: 26px 0 4px;
+  padding: 10px 16px 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 145, 0, 0.4);
+  border-radius: 999px;
+  background: linear-gradient(105deg, rgba(255, 145, 0, 0.12), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+}
+
+.geoshield-dealer-lockup img {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.geoshield-dealer-lockup div {
+  display: grid;
+  gap: 2px;
+}
+
+.geoshield-dealer-lockup span {
+  color: #ff9100;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.geoshield-dealer-lockup strong {
+  color: #fff;
+  font-size: 0.86rem;
+  letter-spacing: 0.025em;
 }
 
 .tint-availability {
