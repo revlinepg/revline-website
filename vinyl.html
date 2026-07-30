@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore more than 200 RPG Premium Vinyl colors from Revline Performance Garage, preview finishes on a vehicle, and request samples, cut lengths, or full rolls." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.revlinepg.com/vinyl.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RPG Premium Vinyl Colors | Revline Performance Garage" />
+  <meta property="og:description" content="Search more than 200 premium automotive vinyl colors and request your preferred RPG finish." />
+  <meta property="og:url" content="https://www.revlinepg.com/vinyl.html" />
+  <meta property="og:image" content="https://www.revlinepg.com/og.jpg" />
+  <title>RPG Premium Vinyl Colors | Revline Performance Garage</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Revline Performance Garage home">
+      <img src="logo.png" alt="Revline Performance Garage" class="logo" />
+    </a>
+    <div class="header-actions">
+      <a class="icon-button" href="tel:7208001542" aria-label="Call Revline Performance Garage">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+      </a>
+      <a class="button button-primary header-book" href="contact.html">Book Appointment</a>
+      <a class="icon-button" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">Gallery &amp; Reviews</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="vinyl-hero">
+      <div class="vinyl-hero-copy">
+        <p class="eyebrow">RPG Premium Vinyl</p>
+        <h1>Find your<br /><span>next color.</span></h1>
+        <p>Explore Revline’s premium automotive vinyl collection by color family and finish. Pick a color, preview the direction on a vehicle, and request a sample, cut length, or full roll.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#vinyl-catalog">Explore Colors</a>
+          <a class="button button-secondary" href="#vinyl-request">Request a Roll</a>
+        </div>
+        <div class="vinyl-hero-facts">
+          <span><strong id="vinyl-total-count">200+</strong> color options</span>
+          <span><strong>23</strong> finish collections</span>
+          <span><strong>RPG</strong> selected quality</span>
+        </div>
+      </div>
+      <div class="vinyl-hero-preview" aria-label="RPG premium vinyl vehicle preview">
+        <div class="vinyl-preview-badge">
+          <img src="rpg-icon.png" alt="" />
+          <span>RPG Premium Vinyl</span>
+        </div>
+        <div class="vinyl-car vinyl-car-hero" aria-hidden="true">
+          <span class="vinyl-car-body"></span>
+          <span class="vinyl-car-glass"></span>
+          <span class="vinyl-car-wheel vinyl-car-wheel-front"></span>
+          <span class="vinyl-car-wheel vinyl-car-wheel-rear"></span>
+          <span class="vinyl-car-detail"></span>
+        </div>
+        <p id="vinyl-preview-name">Select a color below</p>
+      </div>
+    </section>
+
+    <section class="section vinyl-catalog-section" id="vinyl-catalog" aria-labelledby="vinyl-catalog-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Color explorer</p>
+          <h2 id="vinyl-catalog-title">RPG Premium Vinyl Collection</h2>
+          <p>Search by color name or narrow the catalog by finish. Every swatch is based on the supplied color sample.</p>
+        </div>
+        <div class="vinyl-count" aria-live="polite">
+          <strong id="vinyl-result-count">0</strong>
+          <span>colors found</span>
+        </div>
+      </div>
+
+      <div class="vinyl-toolbar">
+        <label class="vinyl-search" for="vinyl-search">
+          <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Search vinyl colors</span>
+          <input id="vinyl-search" type="search" placeholder="Search colors—black, blue, satin…" autocomplete="off" />
+        </label>
+        <label class="vinyl-series-filter" for="vinyl-series">
+          <span>Finish</span>
+          <select id="vinyl-series">
+            <option value="all">All finishes</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="vinyl-series-chips" id="vinyl-series-chips" aria-label="Popular finish filters"></div>
+      <div class="vinyl-grid" id="vinyl-grid" aria-live="polite"></div>
+      <div class="vinyl-load-more-wrap">
+        <button class="button button-secondary" id="vinyl-load-more" type="button">Show More Colors</button>
+      </div>
+
+      <div class="vinyl-accuracy-note">
+        <i class="fas fa-circle-info" aria-hidden="true"></i>
+        <p>Digital previews are a visual guide. Finish, lighting, viewing angle, screen settings, and the vehicle’s body lines can change how a color appears. Request a physical sample before making a final decision.</p>
+      </div>
+    </section>
+
+    <section class="section vinyl-request-section" id="vinyl-request" aria-labelledby="vinyl-request-title">
+      <div class="vinyl-request-copy">
+        <p class="eyebrow">Request your color</p>
+        <h2 id="vinyl-request-title">Tell RPG what you need.</h2>
+        <p>Select a color from the catalog, then send the amount and fulfillment details. Revline will confirm availability, exact pricing, pickup or shipping, and send a secure payment link.</p>
+        <div class="vinyl-selected-card">
+          <img id="vinyl-selected-image" src="rpg-icon.png" alt="" />
+          <div>
+            <span>Selected vinyl</span>
+            <strong id="vinyl-selected-name">Choose a color above</strong>
+            <small id="vinyl-selected-series">RPG Premium Vinyl</small>
+          </div>
+        </div>
+        <ol class="vinyl-request-steps">
+          <li><span>01</span>Choose a color and amount</li>
+          <li><span>02</span>RPG confirms availability and price</li>
+          <li><span>03</span>Receive your secure checkout link</li>
+        </ol>
+      </div>
+
+      <form class="contact-form vinyl-order-form" id="vinyl-order-form" action="/api/vinyl-request" method="POST">
+        <div class="form-heading">
+          <h3>RPG Premium Vinyl Request</h3>
+          <p>Requesting a color does not require payment.</p>
+        </div>
+
+        <div class="tint-form-grid">
+          <div>
+            <label for="vinyl-name">Name</label>
+            <input id="vinyl-name" type="text" name="name" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="vinyl-email">Email</label>
+            <input id="vinyl-email" type="email" name="email" autocomplete="email" required />
+          </div>
+          <div>
+            <label for="vinyl-phone">Phone</label>
+            <input id="vinyl-phone" type="tel" name="phone" autocomplete="tel" required />
+          </div>
+          <div>
+            <label for="vinyl-format">What do you need?</label>
+            <select id="vinyl-format" name="request_type" required>
+              <option value="">Select one</option>
+              <option>Color sample</option>
+              <option>Partial roll / cut length</option>
+              <option>Full roll</option>
+              <option>Not sure — help me choose</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="vinyl-color-name">Selected color</label>
+        <input id="vinyl-color-name" type="text" name="vinyl_color" placeholder="Choose a color from the catalog" readonly required />
+        <input id="vinyl-color-series" type="hidden" name="vinyl_series" />
+
+        <div class="tint-form-grid">
+          <div>
+            <label for="vinyl-amount">Approximate amount</label>
+            <input id="vinyl-amount" type="text" name="amount" placeholder="Example: 5 ft × 20 ft, or full roll" required />
+          </div>
+          <div>
+            <label for="vinyl-fulfillment">Fulfillment</label>
+            <select id="vinyl-fulfillment" name="fulfillment" required>
+              <option value="">Select one</option>
+              <option>Denver local pickup</option>
+              <option>U.S. shipping</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="vinyl-notes">Project notes <span>(optional)</span></label>
+        <textarea id="vinyl-notes" name="message" placeholder="Vehicle, project, delivery ZIP code, timing, or other details"></textarea>
+
+        <label class="tint-confirm">
+          <input type="checkbox" name="request_confirmation" value="Confirmed" required />
+          <span>I understand RPG will confirm inventory, dimensions, final price, and fulfillment before payment.</span>
+        </label>
+
+        <input type="hidden" name="product_line" value="RPG Premium Vinyl" />
+        <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit">Send My Vinyl Request</button>
+        <p class="form-note">You’ll receive a confirmation email from admin@revlinepg.com after the request is recorded.</p>
+        <div class="tint-form-status" id="vinyl-order-status" role="status" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <aside class="mobile-contact-bar" aria-label="Quick contact">
+    <a class="mobile-contact-call" href="tel:7208001542">
+      <i class="fas fa-phone" aria-hidden="true"></i>
+      <span>Call</span>
+    </a>
+    <a class="mobile-contact-book" href="#vinyl-catalog">Explore Colors</a>
+  </aside>
+
+  <footer class="site-footer">
+    <img src="rpg-icon.png" alt="RPG — Revline Performance Garage" class="footer-logo" />
+    <div>
+      <p>&copy; 2026 Revline Performance Garage. All rights reserved.</p>
+      <a class="footer-address" href="https://www.google.com/maps/search/?api=1&amp;query=1000+E+73rd+Ave+Unit+7313+Denver+CO+80229" target="_blank" rel="noopener">
+        1000 E 73rd Ave, Unit 7313, Denver, CO 80229
+      </a>
+      <p class="footer-hours">Monday–Friday: 10:00 AM–6:00 PM</p>
+      <p class="legal-links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </div>
+    <a class="footer-instagram" href="https://www.instagram.com/revline.pg" target="_blank" rel="noopener" aria-label="Visit Revline on Instagram">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+  </footer>
+  <script src="vinyl-data.js" defer></script>
+  <script src="vinyl.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
