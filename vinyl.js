@@ -83,11 +83,14 @@
       const bodyWeight = neutralWeight * brightnessWeight;
       if (bodyWeight < 0.04) continue;
 
-      const shade = 0.34 + 0.78 * (luminance / 255);
-      const highlight = clamp((luminance - 170) / 85, 0, 0.72);
-      const tintedRed = targetRed * shade * (1 - highlight) + 255 * highlight;
-      const tintedGreen = targetGreen * shade * (1 - highlight) + 255 * highlight;
-      const tintedBlue = targetBlue * shade * (1 - highlight) + 255 * highlight;
+      const shade = 0.48 + 0.65 * (luminance / 255);
+      const highlightStrength =
+        (1 - Math.max(targetRed, targetGreen, targetBlue) / 255) *
+        32 *
+        clamp((luminance - 175) / 80, 0, 1);
+      const tintedRed = clamp(targetRed * shade + highlightStrength, 0, 255);
+      const tintedGreen = clamp(targetGreen * shade + highlightStrength, 0, 255);
+      const tintedBlue = clamp(targetBlue * shade + highlightStrength, 0, 255);
 
       output.data[index] = Math.round(red * (1 - bodyWeight) + tintedRed * bodyWeight);
       output.data[index + 1] = Math.round(
