@@ -168,6 +168,9 @@
         "aria-label",
         `Modern sports coupe preview in ${color.name} vinyl`
       );
+      car.classList.remove("is-changing");
+      void car.offsetWidth;
+      car.classList.add("is-changing");
     });
     previewName.textContent = `${color.name} · ${color.series}`;
     selectedImage.src = color.image;

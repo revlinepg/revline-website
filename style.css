@@ -2573,7 +2573,8 @@ button {
 
 .sport-coupe-image,
 .sport-coupe-detail,
-.sport-coupe-vinyl {
+.sport-coupe-color,
+.sport-coupe-finish {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2586,14 +2587,9 @@ button {
   filter: grayscale(1) brightness(0.82) contrast(1.12);
 }
 
-.sport-coupe-vinyl {
+.sport-coupe-color,
+.sport-coupe-finish {
   z-index: 2;
-  background-color: var(--vinyl-color);
-  background-image:
-    linear-gradient(118deg, rgba(255, 255, 255, 0.16), transparent 30% 68%, rgba(0, 0, 0, 0.3)),
-    var(--vinyl-texture);
-  background-position: center;
-  background-size: cover;
   -webkit-mask-image: url("images/sport-coupe.png");
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -2602,16 +2598,44 @@ button {
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
-  mix-blend-mode: multiply;
-  opacity: 0.92;
+}
+
+.sport-coupe-color {
+  background: var(--vinyl-color);
+  mix-blend-mode: color;
+  opacity: 1;
+}
+
+.sport-coupe-finish {
+  z-index: 3;
+  background-image: var(--vinyl-texture);
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
 }
 
 .sport-coupe-detail {
-  z-index: 3;
+  z-index: 4;
   filter: grayscale(1) contrast(1.08);
   mix-blend-mode: luminosity;
-  opacity: 0.42;
+  opacity: 0.3;
   pointer-events: none;
+}
+
+.sport-coupe-preview.is-changing {
+  animation: vinyl-preview-change 360ms ease-out;
+}
+
+@keyframes vinyl-preview-change {
+  0% {
+    filter: brightness(1.22);
+    transform: scale(0.985);
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
 }
 
 .sport-coupe-preview::after {
