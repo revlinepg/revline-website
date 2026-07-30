@@ -166,7 +166,7 @@
       car.style.setProperty("--vinyl-texture", `url("${color.image}")`);
       car.setAttribute(
         "aria-label",
-        `Mitsubishi Lancer Evolution IX MR preview in ${color.name} vinyl`
+        `Modern sports coupe preview in ${color.name} vinyl`
       );
     });
     previewName.textContent = `${color.name} · ${color.series}`;
