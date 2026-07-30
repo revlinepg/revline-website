@@ -2571,10 +2571,8 @@ button {
   isolation: isolate;
 }
 
-.sport-coupe-image,
-.sport-coupe-detail,
-.sport-coupe-color,
-.sport-coupe-finish {
+.sport-coupe-fallback,
+.sport-coupe-canvas {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2582,45 +2580,14 @@ button {
   object-fit: contain;
 }
 
-.sport-coupe-image {
+.sport-coupe-fallback {
   z-index: 1;
   filter: grayscale(1) brightness(0.82) contrast(1.12);
 }
 
-.sport-coupe-color,
-.sport-coupe-finish {
+.sport-coupe-canvas {
   z-index: 2;
-  -webkit-mask-image: url("images/sport-coupe.png");
-  -webkit-mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  mask-image: url("images/sport-coupe.png");
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-}
-
-.sport-coupe-color {
-  background: var(--vinyl-color);
-  mix-blend-mode: color;
-  opacity: 1;
-}
-
-.sport-coupe-finish {
-  z-index: 3;
-  background-image: var(--vinyl-texture);
-  background-position: center;
-  background-size: cover;
-  mix-blend-mode: soft-light;
-  opacity: 0.5;
-}
-
-.sport-coupe-detail {
-  z-index: 4;
-  filter: grayscale(1) contrast(1.08);
-  mix-blend-mode: luminosity;
-  opacity: 0.3;
-  pointer-events: none;
+  display: block;
 }
 
 .sport-coupe-preview.is-changing {
