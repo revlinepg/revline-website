@@ -3154,6 +3154,33 @@ button {
   text-align: center;
 }
 
+.tint-form-status {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.tint-form-status.is-success {
+  border-color: rgba(54, 190, 118, 0.55);
+  background: rgba(31, 133, 78, 0.16);
+  color: #baf2d2;
+}
+
+.tint-form-status.is-error {
+  border-color: rgba(229, 9, 20, 0.58);
+  background: rgba(229, 9, 20, 0.12);
+  color: #ffd1d4;
+}
+
+.tint-order-form[aria-busy="true"] button[type="submit"] {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 @media (max-width: 640px) {
   .rpg-chat-launcher {
     right: 14px;
