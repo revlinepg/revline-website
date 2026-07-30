@@ -2538,7 +2538,7 @@ button {
 }
 
 .vinyl-hero-preview > p {
-  margin: 30px 0 0;
+  margin: 5px 0 0;
   position: relative;
   z-index: 2;
   color: #fff;
@@ -2549,54 +2549,225 @@ button {
   text-transform: uppercase;
 }
 
+.evo-preview-model {
+  position: relative;
+  z-index: 2;
+  display: block;
+  color: #85868c;
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .vinyl-car {
-  width: min(100%, 590px);
+  --vinyl-color: #2a2b30;
+  --vinyl-texture: none;
+  width: min(100%, 620px);
   height: 260px;
   margin: 40px auto 0;
   position: relative;
 }
 
 .vinyl-car-body {
-  --vinyl-color: #2a2b30;
-  --vinyl-texture: none;
-  width: 92%;
-  height: 54%;
+  width: 96%;
+  height: 62%;
   position: absolute;
-  left: 4%;
-  bottom: 24%;
+  left: 2%;
+  bottom: 19%;
   z-index: 2;
-  clip-path: polygon(1% 45%, 9% 31%, 28% 23%, 39% 2%, 67% 0, 82% 22%, 96% 32%, 100% 55%, 96% 78%, 82% 86%, 12% 87%, 2% 72%);
+  clip-path: polygon(0 52%, 3% 39%, 10% 31%, 31% 26%, 39% 4%, 67% 4%, 80% 28%, 92% 35%, 98% 47%, 100% 67%, 96% 83%, 84% 89%, 12% 89%, 2% 78%);
   background-color: var(--vinyl-color);
   background-image:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.32), transparent 24% 64%, rgba(0, 0, 0, 0.38)),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.28), transparent 24% 62%, rgba(0, 0, 0, 0.42)),
     var(--vinyl-texture);
   background-position: center;
   background-size: cover;
   box-shadow: inset 0 -18px 35px rgba(0, 0, 0, 0.35);
 }
 
-.vinyl-car-glass {
-  width: 43%;
-  height: 22%;
+.evo-window,
+.evo-windshield {
   position: absolute;
-  left: 34%;
-  bottom: 66%;
   z-index: 3;
-  clip-path: polygon(8% 100%, 25% 10%, 72% 8%, 96% 100%);
   background: linear-gradient(135deg, #8d929a, #15181d 72%);
   box-shadow: inset 12px 5px 16px rgba(255, 255, 255, 0.12);
 }
 
-.vinyl-car-wheel {
-  width: 84px;
-  height: 84px;
+.evo-window-rear {
+  width: 15%;
+  height: 22%;
+  left: 39%;
+  bottom: 65%;
+  clip-path: polygon(2% 96%, 25% 7%, 100% 7%, 100% 96%);
+}
+
+.evo-window-front {
+  width: 17%;
+  height: 22%;
+  left: 54.4%;
+  bottom: 65%;
+  clip-path: polygon(0 7%, 73% 7%, 98% 96%, 0 96%);
+}
+
+.evo-windshield {
+  width: 11%;
+  height: 22%;
+  left: 69%;
+  bottom: 65%;
+  clip-path: polygon(0 7%, 22% 5%, 100% 96%, 20% 96%);
+  background: linear-gradient(125deg, #737982, #101318 76%);
+}
+
+.evo-door {
   position: absolute;
-  bottom: 10%;
+  bottom: 28%;
   z-index: 4;
-  border: 13px solid #080809;
+  height: 38%;
+  border-right: 1px solid rgba(0, 0, 0, 0.48);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 5px 0;
+}
+
+.evo-door::after {
+  content: "";
+  width: 18px;
+  height: 3px;
+  position: absolute;
+  top: 16%;
+  right: 12px;
+  border-radius: 4px;
+  background: rgba(15, 15, 17, 0.68);
+}
+
+.evo-door-rear {
+  width: 17%;
+  left: 39%;
+}
+
+.evo-door-front {
+  width: 19%;
+  left: 56%;
+}
+
+.evo-side-skirt {
+  width: 61%;
+  height: 6px;
+  position: absolute;
+  left: 19%;
+  bottom: 25%;
+  z-index: 4;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(90deg, #111, #494a4f 48%, #101012);
+}
+
+.evo-hood-vent {
+  width: 54px;
+  height: 9px;
+  position: absolute;
+  right: 12%;
+  bottom: 64%;
+  z-index: 4;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50% 10% 10% 50%;
+  background: #0c0d0f;
+  transform: skewX(-22deg);
+}
+
+.evo-mirror {
+  width: 28px;
+  height: 13px;
+  position: absolute;
+  left: 72%;
+  bottom: 60%;
+  z-index: 5;
+  border-radius: 70% 40% 50% 20%;
+  background: var(--vinyl-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.evo-wing {
+  width: 24%;
+  height: 9px;
+  position: absolute;
+  left: 3%;
+  bottom: 74%;
+  z-index: 5;
+  border-radius: 30% 12% 6% 20%;
+  background: linear-gradient(180deg, #37383d, #080809);
+  transform: rotate(-2deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+}
+
+.evo-wing-stand {
+  width: 9px;
+  height: 47px;
+  position: absolute;
+  bottom: 57%;
+  z-index: 4;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, #0a0a0b, #3e3f44, #09090a);
+  transform: skewX(-7deg);
+}
+
+.evo-wing-stand-left {
+  left: 7%;
+}
+
+.evo-wing-stand-right {
+  left: 22%;
+}
+
+.evo-headlight,
+.evo-taillight {
+  position: absolute;
+  z-index: 5;
+}
+
+.evo-headlight {
+  width: 42px;
+  height: 15px;
+  right: 2.5%;
+  bottom: 50%;
+  clip-path: polygon(0 12%, 100% 0, 78% 100%, 4% 82%);
+  background: linear-gradient(90deg, #e9f7ff, #99d8ff 60%, #fff);
+  box-shadow: 0 0 9px rgba(145, 218, 255, 0.5);
+}
+
+.evo-taillight {
+  width: 25px;
+  height: 27px;
+  left: 2.4%;
+  bottom: 47%;
+  border-radius: 7px 2px 2px 7px;
+  background: linear-gradient(90deg, #8d0208, #ff2530);
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+}
+
+.evo-mr-badge {
+  position: absolute;
+  left: 29%;
+  bottom: 39%;
+  z-index: 5;
+  color: #ef101b;
+  font-size: 0.58rem;
+  font-style: italic;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  text-shadow: 0 1px 1px #000;
+}
+
+.vinyl-car-wheel {
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  bottom: 7%;
+  z-index: 4;
+  border: 12px solid #080809;
   border-radius: 50%;
   background:
-    radial-gradient(circle, #111 0 18%, #aaa 19% 24%, #24262b 25% 52%, #080809 53%);
+    radial-gradient(circle, #171719 0 15%, #ef101b 16% 20%, #8b8e95 21% 25%, #25272c 26% 51%, #09090a 52%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.48);
 }
 
@@ -2609,22 +2780,22 @@ button {
 }
 
 .vinyl-car-wheel-front {
-  right: 12%;
+  right: 12.5%;
 }
 
 .vinyl-car-wheel-rear {
-  left: 13%;
+  left: 13.5%;
 }
 
 .vinyl-car-detail {
-  width: 56%;
+  width: 59%;
   height: 2px;
   position: absolute;
-  left: 21%;
-  bottom: 47%;
+  left: 20%;
+  bottom: 45%;
   z-index: 4;
   background: rgba(255, 255, 255, 0.32);
-  transform: rotate(-1deg);
+  transform: rotate(-0.4deg);
 }
 
 .vinyl-catalog-section {

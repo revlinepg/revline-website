@@ -12,7 +12,7 @@
   const totalCount = document.querySelector("#vinyl-total-count");
   const loadMore = document.querySelector("#vinyl-load-more");
   const previewName = document.querySelector("#vinyl-preview-name");
-  const previewBodies = document.querySelectorAll(".vinyl-car-body");
+  const previewCars = document.querySelectorAll(".vinyl-car");
   const selectedImage = document.querySelector("#vinyl-selected-image");
   const selectedName = document.querySelector("#vinyl-selected-name");
   const selectedSeries = document.querySelector("#vinyl-selected-series");
@@ -161,9 +161,13 @@
     if (!color) return;
     selectedColor = color;
 
-    previewBodies.forEach((body) => {
-      body.style.setProperty("--vinyl-color", color.color);
-      body.style.setProperty("--vinyl-texture", `url("${color.image}")`);
+    previewCars.forEach((car) => {
+      car.style.setProperty("--vinyl-color", color.color);
+      car.style.setProperty("--vinyl-texture", `url("${color.image}")`);
+      car.setAttribute(
+        "aria-label",
+        `Mitsubishi Lancer Evolution IX MR preview in ${color.name} vinyl`
+      );
     });
     previewName.textContent = `${color.name} · ${color.series}`;
     selectedImage.src = color.image;
