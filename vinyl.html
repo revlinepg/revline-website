@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore more than 200 RPG Premium Vinyl colors from Revline Performance Garage, preview finishes on a vehicle, and request samples, cut lengths, or full rolls." />
+  <meta name="description" content="Explore 211 RPG Premium Vinyl colors from Revline Performance Garage, preview finishes on a vehicle, and request 5 ft × 60 ft full rolls." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.revlinepg.com/vinyl.html" />
   <meta property="og:type" content="website" />
@@ -48,14 +48,14 @@
       <div class="vinyl-hero-copy">
         <p class="eyebrow">RPG Premium Vinyl</p>
         <h1>Find your<br /><span>next color.</span></h1>
-        <p>Explore Revline’s premium automotive vinyl collection by color family and finish. Pick a color, preview the direction on a vehicle, and request a sample, cut length, or full roll.</p>
+        <p>Explore Revline’s premium automotive vinyl collection by color family and finish. Pick a color, preview the direction on a vehicle, and request the quantity of 5 ft × 60 ft full rolls you need.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#vinyl-catalog">Explore Colors</a>
           <a class="button button-secondary" href="#vinyl-request">Request a Roll</a>
         </div>
         <div class="vinyl-hero-facts">
           <span><strong id="vinyl-total-count">200+</strong> color options</span>
-          <span><strong>23</strong> finish collections</span>
+          <span><strong>5 × 60 ft</strong> full rolls</span>
           <span><strong>RPG</strong> selected quality</span>
         </div>
       </div>
@@ -110,7 +110,7 @@
 
       <div class="vinyl-accuracy-note">
         <i class="fas fa-circle-info" aria-hidden="true"></i>
-        <p>Digital previews are a visual guide. Finish, lighting, viewing angle, screen settings, and the vehicle’s body lines can change how a color appears. Request a physical sample before making a final decision.</p>
+        <p>Digital previews are a visual guide. Finish, lighting, viewing angle, screen settings, and the vehicle’s body lines can change how a color appears. Contact RPG if you need help confirming a color before ordering.</p>
       </div>
     </section>
 
@@ -118,7 +118,7 @@
       <div class="vinyl-request-copy">
         <p class="eyebrow">Request your color</p>
         <h2 id="vinyl-request-title">Tell RPG what you need.</h2>
-        <p>Select a color from the catalog, then send the amount and fulfillment details. Revline will confirm availability, exact pricing, pickup or shipping, and send a secure payment link.</p>
+        <p>Select a color from the catalog, choose the number of 5 ft × 60 ft rolls, and tell us whether you need Denver pickup or U.S. shipping. Revline will confirm availability, final pricing, and fulfillment before sending a secure payment link.</p>
         <div class="vinyl-selected-card">
           <img id="vinyl-selected-image" src="rpg-icon.png" alt="" />
           <div>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <ol class="vinyl-request-steps">
-          <li><span>01</span>Choose a color and amount</li>
+          <li><span>01</span>Choose a color and roll quantity</li>
           <li><span>02</span>RPG confirms availability and price</li>
           <li><span>03</span>Receive your secure checkout link</li>
         </ol>
@@ -136,8 +136,8 @@
 
       <form class="contact-form vinyl-order-form" id="vinyl-order-form" action="/api/vinyl-request" method="POST">
         <div class="form-heading">
-          <h3>RPG Premium Vinyl Request</h3>
-          <p>Requesting a color does not require payment.</p>
+          <h3>RPG Premium Vinyl Roll Request</h3>
+          <p>Available size: 5 ft × 60 ft. Submitting this form does not collect payment.</p>
         </div>
 
         <div class="tint-form-grid">
@@ -154,14 +154,8 @@
             <input id="vinyl-phone" type="tel" name="phone" autocomplete="tel" required />
           </div>
           <div>
-            <label for="vinyl-format">What do you need?</label>
-            <select id="vinyl-format" name="request_type" required>
-              <option value="">Select one</option>
-              <option>Color sample</option>
-              <option>Partial roll / cut length</option>
-              <option>Full roll</option>
-              <option>Not sure — help me choose</option>
-            </select>
+            <label for="vinyl-roll-size">Roll size</label>
+            <input id="vinyl-roll-size" type="text" name="roll_size" value="5 ft × 60 ft" readonly required />
           </div>
         </div>
 
@@ -171,8 +165,20 @@
 
         <div class="tint-form-grid">
           <div>
-            <label for="vinyl-amount">Approximate amount</label>
-            <input id="vinyl-amount" type="text" name="amount" placeholder="Example: 5 ft × 20 ft, or full roll" required />
+            <label for="vinyl-quantity">Quantity</label>
+            <select id="vinyl-quantity" name="quantity" required>
+              <option value="">Select quantity</option>
+              <option value="1">1 roll</option>
+              <option value="2">2 rolls</option>
+              <option value="3">3 rolls</option>
+              <option value="4">4 rolls</option>
+              <option value="5">5 rolls</option>
+              <option value="6">6 rolls</option>
+              <option value="7">7 rolls</option>
+              <option value="8">8 rolls</option>
+              <option value="9">9 rolls</option>
+              <option value="10">10 rolls</option>
+            </select>
           </div>
           <div>
             <label for="vinyl-fulfillment">Fulfillment</label>
@@ -184,12 +190,15 @@
           </div>
         </div>
 
+        <label for="vinyl-zip">Shipping ZIP code <span>(required only for shipping)</span></label>
+        <input id="vinyl-zip" type="text" name="delivery_zip" inputmode="numeric" autocomplete="postal-code" placeholder="80229" />
+
         <label for="vinyl-notes">Project notes <span>(optional)</span></label>
-        <textarea id="vinyl-notes" name="message" placeholder="Vehicle, project, delivery ZIP code, timing, or other details"></textarea>
+        <textarea id="vinyl-notes" name="message" placeholder="Vehicle or project, desired timing, color questions, or other details"></textarea>
 
         <label class="tint-confirm">
           <input type="checkbox" name="request_confirmation" value="Confirmed" required />
-          <span>I understand RPG will confirm inventory, dimensions, final price, and fulfillment before payment.</span>
+          <span>I understand RPG will confirm 5 ft × 60 ft roll availability, final price, and fulfillment before payment.</span>
         </label>
 
         <input type="hidden" name="product_line" value="RPG Premium Vinyl" />

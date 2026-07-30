@@ -20,6 +20,8 @@
   const seriesInput = document.querySelector("#vinyl-color-series");
   const form = document.querySelector("#vinyl-order-form");
   const status = document.querySelector("#vinyl-order-status");
+  const fulfillment = document.querySelector("#vinyl-fulfillment");
+  const deliveryZip = document.querySelector("#vinyl-zip");
 
   if (!grid || !search || !seriesSelect || !colors.length) return;
 
@@ -278,6 +280,15 @@
         submitButton.textContent = defaultButtonText;
         form.setAttribute("aria-busy", "false");
       }
+    });
+  }
+
+  if (fulfillment && deliveryZip) {
+    fulfillment.addEventListener("change", function () {
+      const shipping = fulfillment.value === "U.S. shipping";
+      deliveryZip.required = shipping;
+      deliveryZip.setAttribute("aria-required", String(shipping));
+      if (!shipping) deliveryZip.setCustomValidity("");
     });
   }
 

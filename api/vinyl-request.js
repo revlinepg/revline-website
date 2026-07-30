@@ -8,12 +8,7 @@ const FORMSPREE_ENDPOINT =
   process.env.FORMSPREE_VINYL_ENDPOINT ||
   process.env.FORMSPREE_TINT_ENDPOINT ||
   "https://formspree.io/f/meozjrrw";
-const ALLOWED_REQUEST_TYPES = new Set([
-  "Color sample",
-  "Partial roll / cut length",
-  "Full roll",
-  "Not sure — help me choose",
-]);
+const ROLL_SIZE = "5 ft × 60 ft";
 const ALLOWED_FULFILLMENT = new Set([
   "Denver local pickup",
   "U.S. shipping",
@@ -76,9 +71,10 @@ function normalizeRequest(body) {
     phone: clean(body.phone, 40),
     color: clean(body.vinyl_color, 140),
     series: clean(body.vinyl_series, 100),
-    requestType: clean(body.request_type, 80),
-    amount: clean(body.amount, 120),
+    rollSize: clean(body.roll_size, 40),
+    quantity: clean(body.quantity, 2),
     fulfillment: clean(body.fulfillment, 80),
+    deliveryZip: clean(body.delivery_zip, 12),
     notes: clean(body.message, 1200),
     confirmed: body.request_confirmation === "Confirmed",
     honeypot: clean(body._gotcha, 200),
@@ -92,8 +88,8 @@ function validateRequest(order) {
     order.phone,
     order.color,
     order.series,
-    order.requestType,
-    order.amount,
+    order.rollSize,
+    order.quantity,
     order.fulfillment,
   ];
   if (required.some((value) => !value) || !order.confirmed) {
@@ -102,11 +98,21 @@ function validateRequest(order) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(order.email)) {
     return "Please enter a valid email address.";
   }
-  if (!ALLOWED_REQUEST_TYPES.has(order.requestType)) {
-    return "Please select a valid request type.";
+  if (order.rollSize !== ROLL_SIZE) {
+    return "The available vinyl roll size is 5 ft × 60 ft.";
+  }
+  const quantity = Number(order.quantity);
+  if (!Number.isInteger(quantity) || quantity < 1 || quantity > 10) {
+    return "Please select a valid roll quantity.";
   }
   if (!ALLOWED_FULFILLMENT.has(order.fulfillment)) {
     return "Please select local pickup or U.S. shipping.";
+  }
+  if (
+    order.fulfillment === "U.S. shipping" &&
+    !/^\d{5}(?:-\d{4})?$/.test(order.deliveryZip)
+  ) {
+    return "Please enter a valid shipping ZIP code.";
   }
   return "";
 }
@@ -118,9 +124,10 @@ function buildFormspreeBody(order) {
     phone: order.phone,
     vinyl_color: order.color,
     vinyl_series: order.series,
-    request_type: order.requestType,
-    amount: order.amount,
+    roll_size: order.rollSize,
+    quantity: order.quantity,
     fulfillment: order.fulfillment,
+    delivery_zip: order.deliveryZip,
     message: order.notes,
     request_confirmation: "Confirmed",
     product_line: "RPG Premium Vinyl",
@@ -132,9 +139,12 @@ function buildConfirmation(order) {
   const name = escapeHtml(order.name);
   const color = escapeHtml(order.color);
   const series = escapeHtml(order.series);
-  const requestType = escapeHtml(order.requestType);
-  const amount = escapeHtml(order.amount);
+  const rollSize = escapeHtml(order.rollSize);
+  const quantity = escapeHtml(order.quantity);
   const fulfillment = escapeHtml(order.fulfillment);
+  const deliveryZip = order.deliveryZip
+    ? escapeHtml(order.deliveryZip)
+    : "Not applicable";
   const notes = order.notes ? escapeHtml(order.notes) : "None provided";
 
   const text = `Hi ${order.name},
@@ -144,13 +154,14 @@ We received your RPG Premium Vinyl request.
 Request details
 Color: ${order.color}
 Collection: ${order.series}
-Request: ${order.requestType}
-Approximate amount: ${order.amount}
+Roll size: ${order.rollSize}
+Quantity: ${order.quantity}
 Fulfillment: ${order.fulfillment}
+Shipping ZIP code: ${order.deliveryZip || "Not applicable"}
 Notes: ${order.notes || "None provided"}
 
 What happens next:
-1. Revline confirms color availability and the dimensions requested.
+1. Revline confirms color availability and the number of 5 ft × 60 ft rolls requested.
 2. We confirm final pricing, pickup or shipping, and fulfillment timing.
 3. We send a secure payment link after the details are approved.
 
@@ -178,14 +189,15 @@ revlinepg.com`;
           <table role="presentation" style="width:100%;border-collapse:collapse;background:#0e0f11;border:1px solid #2b2c31;">
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Color</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${color}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Collection</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${series}</td></tr>
-            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Request</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${requestType}</td></tr>
-            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Amount</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${amount}</td></tr>
+            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Roll size</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${rollSize}</td></tr>
+            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Quantity</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${quantity}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Fulfillment</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${fulfillment}</td></tr>
+            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Shipping ZIP</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${deliveryZip}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;vertical-align:top;">Notes</td><td style="padding:12px 14px;color:#fff;text-align:right;">${notes}</td></tr>
           </table>
           <h2 style="margin:28px 0 12px;color:#fff;font-size:18px;">What happens next</h2>
           <ol style="margin:0 0 24px;padding-left:22px;color:#ddd;line-height:1.8;">
-            <li>Revline confirms color availability and the dimensions requested.</li>
+            <li>Revline confirms color availability and the number of 5 ft × 60 ft rolls requested.</li>
             <li>We confirm final pricing, pickup or shipping, and fulfillment timing.</li>
             <li>We send a secure payment link after the details are approved.</li>
           </ol>

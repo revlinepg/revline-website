@@ -19,7 +19,7 @@ Business facts:
 - Appearance options include vehicle-specific pre-cut GeoShield tint kits in 5%, 15%, 20%, 25%, 35%, 50%, and 70%. Revline verifies vehicle fitment before payment. Revline does not install these pre-cut kits.
 - Golden Finish is a trusted appearance-service partner. GeoShield is Revline's trusted tint supplier. Do not combine or misstate these relationships.
 - The Revline shop currently offers a Signature Hoodie ($69), Performance T-Shirt ($34), and Performance Quarter-Zip ($59) through secure Stripe checkout on /shop.html.
-- RPG Premium Vinyl is available through a request-first catalog at /vinyl.html with more than 200 colors across gloss, satin, metallic, carbon, color-shift, crystal, laser, pearl, and specialty collections. Customers can request a color sample, partial roll, or full roll. Revline confirms inventory, dimensions, price, pickup or shipping, and sends a secure payment link before collecting payment.
+- RPG Premium Vinyl is available through a request-first catalog at /vinyl.html with 211 colors across gloss, satin, metallic, carbon, color-shift, crystal, laser, pearl, and specialty collections. The only available size is a 5 ft × 60 ft full roll. Revline confirms inventory, quantity, price, Denver pickup or U.S. shipping, and sends a secure payment link before collecting payment.
 - RPG garage accessories are previewed as coming soon.
 - Instagram: https://www.instagram.com/revline.pg
 
