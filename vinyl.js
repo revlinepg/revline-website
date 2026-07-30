@@ -22,8 +22,6 @@
   const status = document.querySelector("#vinyl-order-status");
   const fulfillment = document.querySelector("#vinyl-fulfillment");
   const deliveryZip = document.querySelector("#vinyl-zip");
-  const carCanvas = document.querySelector(".sport-coupe-canvas");
-  const carFallback = document.querySelector(".sport-coupe-fallback");
 
   if (!grid || !search || !seriesSelect || !colors.length) return;
 
@@ -41,88 +39,6 @@
   let visibleCount = PAGE_SIZE;
   let activeSeries = "all";
   let selectedColor = null;
-  let carBasePixels = null;
-
-  function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
-  }
-
-  function hexToRgb(hex) {
-    const normalized = String(hex || "").replace("#", "").trim();
-    if (!/^[0-9a-f]{6}$/i.test(normalized)) return [42, 43, 48];
-    return [
-      parseInt(normalized.slice(0, 2), 16),
-      parseInt(normalized.slice(2, 4), 16),
-      parseInt(normalized.slice(4, 6), 16),
-    ];
-  }
-
-  function paintCar(color) {
-    if (!carCanvas || !carBasePixels || !color) return;
-    const context = carCanvas.getContext("2d", { willReadFrequently: true });
-    if (!context) return;
-
-    const [targetRed, targetGreen, targetBlue] = hexToRgb(color.color);
-    const output = context.createImageData(carCanvas.width, carCanvas.height);
-    output.data.set(carBasePixels);
-
-    for (let index = 0; index < output.data.length; index += 4) {
-      const alpha = output.data[index + 3];
-      if (alpha < 10) continue;
-
-      const red = carBasePixels[index];
-      const green = carBasePixels[index + 1];
-      const blue = carBasePixels[index + 2];
-      const maximum = Math.max(red, green, blue);
-      const minimum = Math.min(red, green, blue);
-      const chroma = maximum - minimum;
-      const luminance = red * 0.2126 + green * 0.7152 + blue * 0.0722;
-
-      const neutralWeight = clamp(1 - chroma / 72, 0, 1);
-      const brightnessWeight = clamp((luminance - 48) / 78, 0, 1);
-      const bodyWeight = neutralWeight * brightnessWeight;
-      if (bodyWeight < 0.04) continue;
-
-      const shade = 0.48 + 0.65 * (luminance / 255);
-      const highlightStrength =
-        (1 - Math.max(targetRed, targetGreen, targetBlue) / 255) *
-        32 *
-        clamp((luminance - 175) / 80, 0, 1);
-      const tintedRed = clamp(targetRed * shade + highlightStrength, 0, 255);
-      const tintedGreen = clamp(targetGreen * shade + highlightStrength, 0, 255);
-      const tintedBlue = clamp(targetBlue * shade + highlightStrength, 0, 255);
-
-      output.data[index] = Math.round(red * (1 - bodyWeight) + tintedRed * bodyWeight);
-      output.data[index + 1] = Math.round(
-        green * (1 - bodyWeight) + tintedGreen * bodyWeight
-      );
-      output.data[index + 2] = Math.round(
-        blue * (1 - bodyWeight) + tintedBlue * bodyWeight
-      );
-    }
-
-    context.putImageData(output, 0, 0);
-    if (carFallback) carFallback.hidden = true;
-  }
-
-  if (carCanvas) {
-    const carImage = new Image();
-    carImage.addEventListener("load", function () {
-      const context = carCanvas.getContext("2d", { willReadFrequently: true });
-      if (!context) return;
-      context.clearRect(0, 0, carCanvas.width, carCanvas.height);
-      context.drawImage(carImage, 0, 0, carCanvas.width, carCanvas.height);
-      try {
-        carBasePixels = new Uint8ClampedArray(
-          context.getImageData(0, 0, carCanvas.width, carCanvas.height).data
-        );
-        paintCar(selectedColor);
-      } catch (error) {
-        carBasePixels = null;
-      }
-    });
-    carImage.src = "images/sport-coupe.png";
-  }
 
   const series = [...new Set(colors.map((color) => color.series))].sort();
   series.forEach((name) => {
@@ -244,7 +160,6 @@
     const color = colors.find((item) => item.id === id);
     if (!color) return;
     selectedColor = color;
-    paintCar(color);
 
     previewCars.forEach((car) => {
       car.style.setProperty("--vinyl-color", color.color);
