@@ -2562,72 +2562,24 @@ button {
 }
 
 .vinyl-car {
-  --vinyl-color: #2a2b30;
-  --vinyl-texture: none;
   width: min(100%, 620px);
-  aspect-ratio: 1200 / 420;
+  aspect-ratio: 1707 / 571;
   margin: 48px auto 12px;
   position: relative;
   isolation: isolate;
 }
 
-.sport-coupe-svg {
+.sport-coupe-static img {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
   display: block;
-  overflow: visible;
   filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.38));
 }
 
-.coupe-paint {
-  fill: var(--vinyl-color);
-  transition: fill 220ms ease;
-}
-
-.coupe-rear-haunch {
-  opacity: 0.96;
-}
-
-.coupe-front-fender {
-  opacity: 0.98;
-}
-
-.coupe-body-shadow {
-  fill: #050609;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.coupe-highlight {
-  fill: #fff;
-  opacity: 0.16;
-  pointer-events: none;
-}
-
-.coupe-door-highlight {
-  opacity: 0.08;
-}
-
-.coupe-spokes {
-  opacity: 0.8;
-}
-
-.sport-coupe-preview.is-changing {
-  animation: vinyl-preview-change 360ms ease-out;
-}
-
-@keyframes vinyl-preview-change {
-  0% {
-    filter: brightness(1.22);
-    transform: scale(0.985);
-  }
-  100% {
-    filter: brightness(1);
-    transform: scale(1);
-  }
-}
-
-.sport-coupe-preview::after {
+.sport-coupe-static::after {
   content: "";
   width: 82%;
   height: 11%;

@@ -11,8 +11,6 @@
   const resultCount = document.querySelector("#vinyl-result-count");
   const totalCount = document.querySelector("#vinyl-total-count");
   const loadMore = document.querySelector("#vinyl-load-more");
-  const previewName = document.querySelector("#vinyl-preview-name");
-  const previewCars = document.querySelectorAll(".vinyl-car");
   const selectedImage = document.querySelector("#vinyl-selected-image");
   const selectedName = document.querySelector("#vinyl-selected-name");
   const selectedSeries = document.querySelector("#vinyl-selected-series");
@@ -75,13 +73,13 @@
     article.className = "vinyl-color-card";
     article.dataset.id = color.id;
 
-    const previewButton = document.createElement("button");
-    previewButton.type = "button";
-    previewButton.className = "vinyl-card-swatch";
-    previewButton.dataset.selectColor = color.id;
-    previewButton.setAttribute(
+    const swatchButton = document.createElement("button");
+    swatchButton.type = "button";
+    swatchButton.className = "vinyl-card-swatch";
+    swatchButton.dataset.selectColor = color.id;
+    swatchButton.setAttribute(
       "aria-label",
-      `Preview ${color.name} from the ${color.series} collection`
+      `Select ${color.name} from the ${color.series} collection`
     );
 
     const image = document.createElement("img");
@@ -89,7 +87,7 @@
     image.alt = `${color.name} RPG premium vinyl color sample`;
     image.loading = "lazy";
     image.decoding = "async";
-    previewButton.appendChild(image);
+    swatchButton.appendChild(image);
 
     const copy = document.createElement("div");
     copy.className = "vinyl-card-copy";
@@ -103,12 +101,12 @@
     const actions = document.createElement("div");
     actions.className = "vinyl-card-actions";
 
-    const preview = document.createElement("button");
-    preview.type = "button";
-    preview.className = "vinyl-preview-button";
-    preview.dataset.selectColor = color.id;
-    preview.innerHTML =
-      '<i class="fas fa-car-side" aria-hidden="true"></i><span>Preview</span>';
+    const select = document.createElement("button");
+    select.type = "button";
+    select.className = "vinyl-select-button";
+    select.dataset.selectColor = color.id;
+    select.innerHTML =
+      '<i class="fas fa-check" aria-hidden="true"></i><span>Select</span>';
 
     const request = document.createElement("button");
     request.type = "button";
@@ -116,9 +114,9 @@
     request.dataset.requestColor = color.id;
     request.textContent = "Request";
 
-    actions.append(preview, request);
+    actions.append(select, request);
     copy.append(collection, heading, actions);
-    article.append(previewButton, copy);
+    article.append(swatchButton, copy);
     return article;
   }
 
@@ -161,18 +159,6 @@
     if (!color) return;
     selectedColor = color;
 
-    previewCars.forEach((car) => {
-      car.style.setProperty("--vinyl-color", color.color);
-      car.style.setProperty("--vinyl-texture", `url("${color.image}")`);
-      car.setAttribute(
-        "aria-label",
-        `Modern sports coupe preview in ${color.name} vinyl`
-      );
-      car.classList.remove("is-changing");
-      void car.offsetWidth;
-      car.classList.add("is-changing");
-    });
-    previewName.textContent = `${color.name} · ${color.series}`;
     selectedImage.src = color.image;
     selectedImage.alt = `${color.name} RPG premium vinyl color sample`;
     selectedName.textContent = color.name;
@@ -190,11 +176,6 @@
         block: "start",
       });
       window.setTimeout(() => document.querySelector("#vinyl-name").focus(), 600);
-    } else if (scrollToRequest === false) {
-      document.querySelector(".vinyl-hero-preview").scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
     }
   }
 
@@ -218,8 +199,8 @@
       chooseColor(request.dataset.requestColor, true);
       return;
     }
-    const preview = event.target.closest("[data-select-color]");
-    if (preview) chooseColor(preview.dataset.selectColor, false);
+    const selection = event.target.closest("[data-select-color]");
+    if (selection) chooseColor(selection.dataset.selectColor, false);
   });
 
   loadMore.addEventListener("click", function () {
