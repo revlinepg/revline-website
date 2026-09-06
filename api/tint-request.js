@@ -6,7 +6,11 @@ const visitors = new Map();
 const BUSINESS_EMAIL = "admin@revlinepg.com";
 const FORMSPREE_ENDPOINT =
   process.env.FORMSPREE_TINT_ENDPOINT || "https://formspree.io/f/meozjrrw";
-const ALLOWED_SHADES = new Set(["5%", "15%", "20%", "25%", "35%", "50%", "70%"]);
+const ALLOWED_TIER_SHADES = {
+  Standard: new Set(["6%", "18%", "39%", "73%"]),
+  Performance: new Set(["8%", "20%", "30%", "70%"]),
+  "Ceramic IR": new Set(["4%", "16%", "30%", "70%"]),
+};
 const ALLOWED_COVERAGE = new Set([
   "Front two windows",
   "Side and rear kit",
@@ -76,6 +80,7 @@ function normalizeRequest(body) {
     vehicleMake: clean(body.vehicle_make, 80),
     vehicleModel: clean(body.vehicle_model, 80),
     bodyStyle: clean(body.body_style, 120),
+    filmTier: clean(body.film_tier, 40),
     shade: clean(body.shade_percentage, 4),
     coverage: clean(body.coverage, 80),
     notes: clean(body.message, 1200),
@@ -93,6 +98,7 @@ function validateRequest(order) {
     order.vehicleMake,
     order.vehicleModel,
     order.bodyStyle,
+    order.filmTier,
     order.shade,
     order.coverage,
   ];
@@ -110,7 +116,11 @@ function validateRequest(order) {
     return "Please enter a valid four-digit vehicle year.";
   }
 
-  if (!ALLOWED_SHADES.has(order.shade) || !ALLOWED_COVERAGE.has(order.coverage)) {
+  if (
+    !ALLOWED_TIER_SHADES[order.filmTier] ||
+    !ALLOWED_TIER_SHADES[order.filmTier].has(order.shade) ||
+    !ALLOWED_COVERAGE.has(order.coverage)
+  ) {
     return "Please select a valid shade and coverage option.";
   }
 
@@ -126,12 +136,13 @@ function buildFormspreeBody(order) {
     vehicle_make: order.vehicleMake,
     vehicle_model: order.vehicleModel,
     body_style: order.bodyStyle,
+    film_tier: order.filmTier,
     shade_percentage: order.shade,
     coverage: order.coverage,
     message: order.notes,
     fitment_confirmation: "Confirmed",
-    film_brand: "GeoShield",
-    _subject: "New GeoShield pre-cut tint order request from revlinepg.com",
+    film_brand: "Revline Window Film",
+    _subject: "New Revline pre-cut tint order request from revlinepg.com",
   });
   return data;
 }
@@ -142,23 +153,25 @@ function buildConfirmation(order) {
     .map(escapeHtml)
     .join(" ");
   const bodyStyle = escapeHtml(order.bodyStyle);
+  const filmTier = escapeHtml(order.filmTier);
   const shade = escapeHtml(order.shade);
   const coverage = escapeHtml(order.coverage);
   const notes = order.notes ? escapeHtml(order.notes) : "None provided";
 
   const text = `Hi ${order.name},
 
-We received your GeoShield pre-cut tint order request.
+We received your Revline pre-cut tint order request.
 
 Request details
 Vehicle: ${order.vehicleYear} ${order.vehicleMake} ${order.vehicleModel}
 Body style: ${order.bodyStyle}
+Film tier: ${order.filmTier}
 Shade: ${order.shade}
 Coverage: ${order.coverage}
 Fitment notes: ${order.notes || "None provided"}
 
 What happens next:
-1. Revline verifies the vehicle pattern and GeoShield film availability.
+1. Revline verifies the vehicle pattern and film availability.
 2. We confirm pricing, pickup or shipping, and fulfillment timing.
 3. We send a secure payment link after the details are approved.
 
@@ -182,17 +195,18 @@ revlinepg.com`;
         </div>
         <div style="padding:28px;">
           <p style="margin:0 0 18px;color:#ddd;line-height:1.6;">Hi ${name},</p>
-          <p style="margin:0 0 24px;color:#ddd;line-height:1.6;">We received your GeoShield pre-cut tint order request. Here is the information you submitted:</p>
+          <p style="margin:0 0 24px;color:#ddd;line-height:1.6;">We received your Revline pre-cut tint order request. Here is the information you submitted:</p>
           <table role="presentation" style="width:100%;border-collapse:collapse;background:#0e0f11;border:1px solid #2b2c31;">
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Vehicle</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${vehicle}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Body style</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${bodyStyle}</td></tr>
+            <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Film tier</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${filmTier}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Shade</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${shade}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;border-bottom:1px solid #25262a;">Coverage</td><td style="padding:12px 14px;color:#fff;border-bottom:1px solid #25262a;text-align:right;">${coverage}</td></tr>
             <tr><td style="padding:12px 14px;color:#888;vertical-align:top;">Fitment notes</td><td style="padding:12px 14px;color:#fff;text-align:right;">${notes}</td></tr>
           </table>
           <h2 style="margin:28px 0 12px;color:#fff;font-size:18px;">What happens next</h2>
           <ol style="margin:0 0 24px;padding-left:22px;color:#ddd;line-height:1.8;">
-            <li>Revline verifies the vehicle pattern and GeoShield film availability.</li>
+            <li>Revline verifies the vehicle pattern and film availability.</li>
             <li>We confirm pricing, pickup or shipping, and fulfillment timing.</li>
             <li>We send a secure payment link after the details are approved.</li>
           </ol>
@@ -214,7 +228,7 @@ module.exports = async function handler(req, res) {
   if (req.method === "GET") {
     return sendJson(res, 200, {
       ok: true,
-      service: "GeoShield tint request",
+      service: "Revline tint request",
       emailConfigured: Boolean(process.env.ZOHO_SMTP_APP_PASSWORD),
     });
   }
@@ -290,7 +304,7 @@ module.exports = async function handler(req, res) {
       from: `"Revline Performance Garage" <${BUSINESS_EMAIL}>`,
       to: order.email,
       replyTo: BUSINESS_EMAIL,
-      subject: "We received your GeoShield pre-cut tint request",
+      subject: "We received your Revline pre-cut tint request",
       text: confirmation.text,
       html: confirmation.html,
     });

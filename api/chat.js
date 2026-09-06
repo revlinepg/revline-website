@@ -16,8 +16,8 @@ Business facts:
 - Experience: 9+ years.
 - Appointment requests are submitted at /contact.html#contact-form. A request is not a confirmed appointment; the Revline team follows up.
 - Core work includes routine maintenance, diagnostics, engine and transmission service, brakes, steering, suspension, electrical and climate concerns, tires, inspections, performance upgrades, and custom automotive projects.
-- Appearance options include vehicle-specific pre-cut GeoShield tint kits in 5%, 15%, 20%, 25%, 35%, 50%, and 70%. Revline verifies vehicle fitment before payment. Revline does not install these pre-cut kits.
-- Golden Finish is a trusted appearance-service partner. GeoShield is Revline's trusted tint supplier. Do not combine or misstate these relationships.
+- Appearance options include vehicle-specific pre-cut Revline Window Film in Standard, Performance, and Ceramic IR tiers. Available VLT depends on the selected tier. Revline verifies vehicle fitment before payment. Revline does not install these pre-cut kits.
+- Golden Finish is a trusted appearance-service partner. Revline Window Film is professionally sourced and selected by Revline; do not claim that Revline manufactures the film.
 - The Revline shop currently offers a Signature Hoodie ($69), Performance T-Shirt ($34), and Performance Quarter-Zip ($59) through secure Stripe checkout on /shop.html.
 - RPG Premium Vinyl is available through a request-first catalog at /vinyl.html with 211 colors across gloss, satin, metallic, carbon, color-shift, crystal, laser, pearl, and specialty collections. The only available size is a 5 ft × 60 ft full roll. Revline confirms inventory, quantity, price, Denver pickup or U.S. shipping, and sends a secure payment link before collecting payment.
 - RPG garage accessories are previewed as coming soon.

@@ -365,7 +365,8 @@ main {
   font-size: 1.8rem;
 }
 
-.geoshield-category-logo {
+.geoshield-category-logo,
+.revline-category-logo {
   width: 58px;
   height: 58px;
   margin-bottom: 18px;
@@ -1597,7 +1598,8 @@ main {
   border-radius: 8px;
 }
 
-.geoshield-partner-badge {
+.geoshield-partner-badge,
+.revline-film-partner-badge {
   width: 100%;
   grid-template-columns: 66px minmax(0, 1fr);
   align-items: center;
@@ -1606,7 +1608,8 @@ main {
   color: #fff;
 }
 
-.geoshield-partner-wrap {
+.geoshield-partner-wrap,
+.revline-film-partner-wrap {
   min-height: 118px;
   padding: 18px 24px;
   border-color: rgba(255, 145, 0, 0.42);
@@ -1616,20 +1619,23 @@ main {
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
-.partner-logo-geoshield {
+.partner-logo-geoshield,
+.partner-logo-revline-film {
   width: 66px;
   height: 66px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.geoshield-partner-badge span {
+.geoshield-partner-badge span,
+.revline-film-partner-badge span {
   display: grid;
   justify-items: start;
   gap: 3px;
 }
 
-.geoshield-partner-badge small {
+.geoshield-partner-badge small,
+.revline-film-partner-badge small {
   color: #ff9100;
   font-size: 0.72rem;
   font-weight: 900;
@@ -1637,20 +1643,42 @@ main {
   text-transform: uppercase;
 }
 
-.geoshield-partner-badge strong {
+.geoshield-partner-badge strong,
+.revline-film-partner-badge strong {
   color: #fff;
   font-size: clamp(0.82rem, 1.7vw, 1rem);
   letter-spacing: 0.075em;
   text-transform: uppercase;
 }
 
-.geoshield-partner-wrap:hover {
+.geoshield-partner-wrap:hover,
+.revline-film-partner-wrap:hover {
   border-color: rgba(255, 145, 0, 0.78);
   transform: translateY(-2px);
 }
 
-.geoshield-partner-badge:hover .partner-logo-geoshield {
+.geoshield-partner-badge:hover .partner-logo-geoshield,
+.revline-film-partner-badge:hover .partner-logo-revline-film {
   filter: drop-shadow(0 12px 26px rgba(255, 145, 0, 0.24));
+}
+
+.revline-film-partner-wrap {
+  border-color: rgba(229, 9, 20, 0.42);
+  background:
+    linear-gradient(110deg, rgba(229, 9, 20, 0.14), transparent 56%),
+    rgba(0, 0, 0, 0.46);
+}
+
+.revline-film-partner-badge small {
+  color: var(--red);
+}
+
+.revline-film-partner-wrap:hover {
+  border-color: rgba(229, 9, 20, 0.78);
+}
+
+.revline-film-partner-badge:hover .partner-logo-revline-film {
+  filter: drop-shadow(0 12px 26px rgba(229, 9, 20, 0.3));
 }
 
 .faq-section {
@@ -2082,20 +2110,20 @@ button {
   font-size: clamp(1rem, 2vw, 1.17rem);
 }
 
-.geoshield-dealer-lockup {
+.revline-film-lockup {
   width: fit-content;
   margin: 26px 0 4px;
   padding: 10px 16px 10px 10px;
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid rgba(255, 145, 0, 0.4);
+  border: 1px solid rgba(229, 9, 20, 0.45);
   border-radius: 999px;
-  background: linear-gradient(105deg, rgba(255, 145, 0, 0.12), rgba(255, 255, 255, 0.025));
+  background: linear-gradient(105deg, rgba(229, 9, 20, 0.13), rgba(255, 255, 255, 0.025));
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
 }
 
-.geoshield-dealer-lockup img {
+.revline-film-lockup img {
   width: 48px;
   height: 48px;
   flex: 0 0 48px;
@@ -2103,20 +2131,20 @@ button {
   object-fit: cover;
 }
 
-.geoshield-dealer-lockup div {
+.revline-film-lockup div {
   display: grid;
   gap: 2px;
 }
 
-.geoshield-dealer-lockup span {
-  color: #ff9100;
+.revline-film-lockup span {
+  color: var(--red);
   font-size: 0.68rem;
   font-weight: 850;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.geoshield-dealer-lockup strong {
+.revline-film-lockup strong {
   color: #fff;
   font-size: 0.86rem;
   letter-spacing: 0.025em;
@@ -2198,6 +2226,26 @@ button {
   font-size: 0.73rem;
   font-weight: 850;
   letter-spacing: 0.2em;
+}
+
+.tint-comparison-figure {
+  margin: 0;
+}
+
+.tint-comparison-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(229, 9, 20, 0.45);
+  border-radius: var(--radius);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+.tint-comparison-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-align: center;
 }
 
 .tint-swatch-grid {
