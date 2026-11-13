@@ -3795,3 +3795,22 @@ button {
     transition: none !important;
   }
 }
+
+/* Readability and compact previews */
+.hero { min-height: auto; padding: 48px 0; gap: clamp(28px, 4vw, 60px); }
+.hero h1 { font-size: clamp(2.5rem, 4.8vw, 4rem); }
+.shop-hero h1, .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4.2rem); }
+.section-heading h2, .legal-page h2 { color: #f2f2f4; }
+.legal-page p { max-width: 75ch; line-height: 1.75; }
+.embed-fallback { color: #d1d1d4; line-height: 1.7; }
+.embed-fallback a, .purchase-help a, .form-note a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.social-preview, .accessory-preview-details { margin: 24px 0; border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: var(--surface); }
+.social-preview summary, .accessory-preview-details summary { cursor: pointer; color: #fff; font-weight: 700; padding: 6px 0; }
+.social-preview[open] summary, .accessory-preview-details[open] summary { margin-bottom: 20px; }
+.social-preview summary:focus-visible, .accessory-preview-details summary:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+.purchase-help p { max-width: 80ch; line-height: 1.75; }
+@media (max-width: 640px) {
+  .hero { padding: 32px 0 44px; gap: 30px; }
+  .hero h1, .shop-hero h1, .page-hero h1 { font-size: clamp(2.35rem, 10vw, 3rem); }
+  .social-preview, .accessory-preview-details { padding: 14px; }
+}
